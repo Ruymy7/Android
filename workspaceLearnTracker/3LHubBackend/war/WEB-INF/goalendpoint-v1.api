@@ -1,0 +1,203 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://lifelong-learning-hub.appspot.com/_ah/api",
+  "name" : "goalendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://lifelong-learning-hub.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "ounl.org",
+  "ownerName" : "ounl.org",
+  "packagePath" : "lifelonglearninghub.db",
+  "methods" : {
+    "goalendpoint.listGoal" : {
+      "path" : "goal",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.db.GoalEndpoint.listGoal",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "goalendpoint.removeGoal" : {
+      "path" : "goal/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.db.GoalEndpoint.removeGoal",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "goalendpoint.insertGoal" : {
+      "path" : "goal",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.db.GoalEndpoint.insertGoal",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "goalendpoint.getGoal" : {
+      "path" : "goal/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.db.GoalEndpoint.getGoal",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "goalendpoint.updateGoal" : {
+      "path" : "goal",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.db.GoalEndpoint.updateGoal",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "CollectionResponse_Goal" : {
+        "id" : "CollectionResponse_Goal",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Goal"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Goal" : {
+        "id" : "Goal",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "goal_name" : {
+            "type" : "string"
+          },
+          "goal_desc" : {
+            "type" : "string"
+          },
+          "goal_time_daily" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "goal_date_deadline" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "org.ounl.lifelonglearninghub.db.GoalEndpoint.listGoal" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Goal"
+        }
+      },
+      "org.ounl.lifelonglearninghub.db.GoalEndpoint.removeGoal" : {
+      },
+      "org.ounl.lifelonglearninghub.db.GoalEndpoint.insertGoal" : {
+        "request" : {
+          "$ref" : "Goal"
+        },
+        "response" : {
+          "$ref" : "Goal"
+        }
+      },
+      "org.ounl.lifelonglearninghub.db.GoalEndpoint.getGoal" : {
+        "response" : {
+          "$ref" : "Goal"
+        }
+      },
+      "org.ounl.lifelonglearninghub.db.GoalEndpoint.updateGoal" : {
+        "request" : {
+          "$ref" : "Goal"
+        },
+        "response" : {
+          "$ref" : "Goal"
+        }
+      }
+    }
+  }
+}

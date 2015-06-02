@@ -1,0 +1,231 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://learn-beacon.appspot.com/_ah/api",
+  "name" : "layerendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://learn-beacon.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "ounl.org",
+  "ownerName" : "ounl.org",
+  "packagePath" : "lifelonglearninghub.learnbeacon.backend.db",
+  "methods" : {
+    "layerendpoint.removeLayer" : {
+      "path" : "layer/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.removeLayer",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "layerendpoint.insertLayer" : {
+      "path" : "layer",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.insertLayer",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "layerendpoint.updateLayer" : {
+      "path" : "layer",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.updateLayer",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "layerendpoint.getLayer" : {
+      "path" : "layer/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.getLayer",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "layerendpoint.listLayer" : {
+      "path" : "layer",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.listLayer",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Layer" : {
+        "id" : "Layer",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "beacon_id" : {
+            "type" : "string"
+          },
+          "layer_cc" : {
+            "type" : "string"
+          },
+          "level" : {
+            "type" : "integer"
+          },
+          "distance" : {
+            "type" : "integer"
+          },
+          "signal" : {
+            "type" : "integer"
+          },
+          "content" : {
+            "$ref" : "Text"
+          },
+          "tag" : {
+            "type" : "string"
+          },
+          "timestamp_update" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "timestamp_validity_start" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "timestamp_validity_end" : {
+            "type" : "string",
+            "format" : "int64"
+          }
+        }
+      },
+      "Text" : {
+        "id" : "Text",
+        "type" : "object",
+        "properties" : {
+          "value" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_Layer" : {
+        "id" : "CollectionResponse_Layer",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Layer"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.removeLayer" : {
+      },
+      "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.insertLayer" : {
+        "request" : {
+          "$ref" : "Layer"
+        },
+        "response" : {
+          "$ref" : "Layer"
+        }
+      },
+      "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.updateLayer" : {
+        "request" : {
+          "$ref" : "Layer"
+        },
+        "response" : {
+          "$ref" : "Layer"
+        }
+      },
+      "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.getLayer" : {
+        "response" : {
+          "$ref" : "Layer"
+        }
+      },
+      "org.ounl.lifelonglearninghub.learnbeacon.backend.db.LayerEndpoint.listLayer" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Layer"
+        }
+      }
+    }
+  }
+}

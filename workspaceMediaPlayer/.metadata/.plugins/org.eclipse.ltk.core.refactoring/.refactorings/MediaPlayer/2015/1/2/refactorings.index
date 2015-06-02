@@ -1,0 +1,41 @@
+1420481050874	Delete element
+1420492332608	Rename package 'com.google.sample.cast.refplayer'
+1420733420605	Delete element
+1420733436451	Delete element
+1420733452078	Delete element
+1420733468040	Delete element
+1420733488075	Delete element
+1420733514319	Delete element
+1420733529913	Delete element
+1420733539775	Delete element
+1420733564337	Delete element
+1420733574720	Delete element
+1420733584235	Delete element
+1420733589109	Delete element
+1420733602135	Delete element
+1420733611500	Delete element
+1420803191520	Rename method 'getType'
+1420803481635	Delete elements
+1420803793654	Rename type 'MimeMediaRecord'
+1420803850675	Copy compilation unit
+1420803881160	Copy compilation unit
+1420809234313	Copy compilation unit
+1420809249802	Rename type 'IParsedNdefRecord'
+1420809262995	Rename type 'PauseRecord'
+1420809276406	Rename type 'PlayRecord'
+1420809287270	Rename type 'StopRecord'
+1420811545582	Rename local variable 'sId'
+1420811618715	Rename local variable 'fin'
+1420811637208	Rename local variable 'separator'
+1420813258306	Rename local variable 'record'
+1420813344236	Rename type 'NFCManager'
+1420813820539	Rename method 'newTextRecord'
+1420814292279	Copy compilation unit
+1420814308333	Rename type 'MainActivity'
+1420814320527	Move compilation unit
+1420815080992	Delete element
+1420815290392	Delete element
+1420815301840	Copy compilation unit
+1420815340517	Rename type 'VideoBrowserActivity'
+1420815353964	Move compilation unit
+1420926689683	Delete element

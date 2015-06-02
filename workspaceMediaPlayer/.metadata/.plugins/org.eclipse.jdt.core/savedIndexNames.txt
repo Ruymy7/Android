@@ -1,0 +1,15 @@
+INDEX VERSION 1.126+/Users/BTB/Projects/workspaceMediaPlayer/.metadata/.plugins/org.eclipse.jdt.core
+4138226662.index
+4212594430.index
+3443541279.index
+3456769329.index
+1377251446.index
+2363620752.index
+4221473784.index
+4209265251.index
+2251769699.index
+2366105740.index
+19148487.index
+2075721122.index
+1415693123.index
+4143967139.index

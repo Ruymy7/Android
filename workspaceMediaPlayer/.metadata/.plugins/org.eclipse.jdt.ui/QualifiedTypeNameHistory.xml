@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.support.v7.media.MediaRouter"/>
+<fullyQualifiedTypeName name="android.support.v7.media.MediaRouteSelector"/>
+<fullyQualifiedTypeName name="com.google.android.gms.cast.CastMediaControlIntent"/>
+<fullyQualifiedTypeName name="com.google.sample.cast.refplayer.R.string"/>
+<fullyQualifiedTypeName name="android.support.v7.app.MediaRouteActionProvider"/>
+<fullyQualifiedTypeName name="android.support.v4.view.MenuItemCompat"/>
+<fullyQualifiedTypeName name="com.google.android.gms.cast.CastDevice"/>
+<fullyQualifiedTypeName name="com.google.sample.cast.refplayer.VideoBrowserActivity.MyMediaRouterCallback"/>
+<fullyQualifiedTypeName name="com.google.android.gms.cast.MediaMetadata"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.R"/>
+<fullyQualifiedTypeName name="android.app.Activity"/>
+<fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.nfc.nfcrecord.NdefMessageParser"/>
+<fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.nfc.nfcrecord.IParsedNdefRecord"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.nfc.NdefRecord"/>
+<fullyQualifiedTypeName name="com.google.android.gms.wearable.NodeApi.GetConnectedNodesResult"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
+<fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
+<fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.R.id"/>
+<fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.cast.refplayer.browser.VideoBrowserListFragment"/>
+<fullyQualifiedTypeName name="android.widget.ListView"/>
+<fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="android.graphics.drawable.Drawable"/>
+<fullyQualifiedTypeName name="android.graphics.drawable.ColorDrawable"/>
+<fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.cast.refplayer.CastApplication"/>
+<fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.nfc.nfcrecord.IParsedNdefCommand"/>
+</qualifiedTypeNameHistroy>
