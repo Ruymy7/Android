@@ -26,6 +26,8 @@ import java.text.SimpleDateFormat;
  */
 public class Constants {
 	
+	public static final int NOISE_LEVELS = 7;
+	
 	
 	public static long SEM = 604800000;
 	public static long HORA = 3600000;

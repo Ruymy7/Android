@@ -97,25 +97,36 @@ public class ListViewSubjectsAdapter extends BaseAdapter {
 	public View getView(int position, View v, ViewGroup parent) {
 
 		SubjectRow sr;
+		HashMap map = list.get(position);
 
 		LayoutInflater inflater = activity.getLayoutInflater();
 		if (v == null) {
 			v = inflater.inflate(R.layout.listview_row_subject, null);
 			sr = new SubjectRow();
-			sr.iv = (ImageView) v.findViewById(R.id.ivSubjectIcon);
+			sr.ivBullet = (ImageView) v.findViewById(R.id.ivSubjectIcon);
 			sr.tvField0 = (TextView) v.findViewById(R.id.tvSubjectLevel0);
 			sr.tvField1 = (TextView) v.findViewById(R.id.tvSubjectLevel1);
 			sr.tvField2 = (TextView) v.findViewById(R.id.tvSubjectLevel2);
 			sr.tvField3 = (TextView) v.findViewById(R.id.tvSubjectLevel3);
-			v.setTag(sr);
+			
+			sr.ivPie = (ImageView) v.findViewById(R.id.ivPie);
+			sr.ivBar = (ImageView) v.findViewById(R.id.ivBar);
+			sr.ivScat = (ImageView) v.findViewById(R.id.ivScatter);
+			
+			//v.setTag(sr);
 
 
 		} else {
 			sr = (SubjectRow) v.getTag();
 		}
 
-		HashMap map = list.get(position);
 		
+		sr.ivPie.setTag((String)map.get(NoiseSampleDb.KEY_TAG));
+		sr.ivBar.setTag((String)map.get(NoiseSampleDb.KEY_TAG));
+		sr.ivScat.setTag((String)map.get(NoiseSampleDb.KEY_TAG));
+		
+		
+		v.setTag((String)map.get(NoiseSampleDb.KEY_TAG));
 		
 		sr.sIdSubject = (String)map.get(NoiseSampleDb.KEY_TAG);
 

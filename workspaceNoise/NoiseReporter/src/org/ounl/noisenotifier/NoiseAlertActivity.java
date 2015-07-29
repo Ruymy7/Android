@@ -10,9 +10,9 @@ import org.ounl.noisenotifier.fcube.Constants;
 import org.ounl.noisenotifier.fcube.commands.FCColor;
 import org.ounl.noisenotifier.fcube.commands.FCOff;
 import org.ounl.noisenotifier.fcube.commands.FCOn;
-import org.ounl.noisenotifier.fcube.config.FeedbackCubeColor;
 import org.ounl.noisenotifier.fcube.config.FeedbackCubeConfig;
 import org.ounl.noisenotifier.fcube.config.FeedbackCubeManager;
+import org.ounl.noisenotifier.feeback.FeedbackColor;
 
 import android.app.Activity;
 import android.content.Context;
@@ -42,6 +42,8 @@ public class NoiseAlertActivity extends Activity {
 	private Handler mHandler = new Handler();
 
 	private DatabaseHandler db;
+	
+	private NoiseUtils nu = new NoiseUtils();
 
 	/* References to view elements */
 	private TextView mStatusView, tv_noice;
@@ -105,7 +107,7 @@ public class NoiseAlertActivity extends Activity {
 					// Return color for average values in buffeer
 					// Commented for calibration
 					readThreshold();
-					FeedbackCubeColor color = FeedbackCubeConfig.getSingleInstance().getBufferColor();
+					FeedbackColor color = FeedbackCubeConfig.getSingleInstance().getBufferColor();
 
 					// Launch color in the cube
 					FCColor fcc = new FCColor(FeedbackCubeConfig
@@ -272,7 +274,7 @@ public class NoiseAlertActivity extends Activity {
 	}
 
 	private void updateAvgTextAndBackground(double signalAVG, double signal,
-			FeedbackCubeColor co) {
+			FeedbackColor co) {
 
 		// stop();
 
@@ -357,41 +359,45 @@ public class NoiseAlertActivity extends Activity {
 		// etThresMin = (EditText) findViewById(R.id.etMimThreshold);
 		try {
 			
-			int iLevels = 7;
+			//int iLevels = 7;
 			
 			Double dMinThres = new Double(etThresMin.getText().toString());
 			Double dMaxThres = new Double(etThresMax.getText().toString());
 			
 			double dDiff = dMaxThres - dMinThres;
-			double dEscalon = dDiff / iLevels;
+			//double dEscalon = dDiff / iLevels;
 			
 			
-			if (dNoise < (dMinThres + (dEscalon*1)) ){
-				// Level noise level 1
-				return R.drawable.level1_175x;
-			}else if (dNoise < (dMinThres + (dEscalon*2))){
-				// Level noise level 2
-				return R.drawable.level2_175x;
-			}else if (dNoise < (dMinThres + (dEscalon*3))){
-				// Level noise level 3
-				return R.drawable.level3_175x;
-			}else if (dNoise < (dMinThres + (dEscalon*4))){
-				// Level noise level 4
-				return R.drawable.level4_175x;
-			}else if (dNoise < (dMinThres + (dEscalon*5))){
-				// Level noise level 5
-				return R.drawable.level5_175x;				
-			}else if (dNoise < (dMinThres + (dEscalon*6))){
-				// Level noise level 6
-				return R.drawable.level6_175x;
-			}else{
-				// Level noise level 7
-				return R.drawable.level7_175x;
-			}
+			return NoiseUtils.getFruitImage(dNoise, dMinThres, dMaxThres);
+
+			
+//			
+//			if (dNoise < (dMinThres + (dEscalon*1)) ){
+//				// Level noise level 1
+//				return R.drawable.level1_175x;
+//			}else if (dNoise < (dMinThres + (dEscalon*2))){
+//				// Level noise level 2
+//				return R.drawable.level2_175x;
+//			}else if (dNoise < (dMinThres + (dEscalon*3))){
+//				// Level noise level 3
+//				return R.drawable.level3_175x;
+//			}else if (dNoise < (dMinThres + (dEscalon*4))){
+//				// Level noise level 4
+//				return R.drawable.level4_175x;
+//			}else if (dNoise < (dMinThres + (dEscalon*5))){
+//				// Level noise level 5
+//				return R.drawable.level5_175x;				
+//			}else if (dNoise < (dMinThres + (dEscalon*6))){
+//				// Level noise level 6
+//				return R.drawable.level6_175x;
+//			}else{
+//				// Level noise level 7
+//				return R.drawable.level7_175x;
+//			}
 			
 			
 		} catch (Exception e) {
-			return R.drawable.noise_175x;
+			return R.drawable.levelunknown_175x;
 		}
 
 	}

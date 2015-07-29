@@ -72,9 +72,10 @@ public class SubjectsActivity extends Activity {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				intent.putExtra("POSITION", "" + position);
-                Toast.makeText( SubjectsActivity.this,                                                           
-                        " PSITION "+position,
+				intent.putExtra("TAG", (String)view.getTag());
+				
+                Toast.makeText( SubjectsActivity.this,                            
+                		" Position clicked "+position,
                         Toast.LENGTH_LONG).show();
 				startActivity(intent);
 			}
@@ -125,6 +126,7 @@ public class SubjectsActivity extends Activity {
 
 	public void onClickPie(View v){
 		Intent intent = new Intent(this,PieChartActivity.class);
+		intent.putExtra("TAG", "" + (String)v.getTag());
 		startActivity(intent);	
 	}
 	

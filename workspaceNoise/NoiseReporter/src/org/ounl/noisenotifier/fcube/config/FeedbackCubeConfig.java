@@ -18,7 +18,10 @@
  ******************************************************************************/
 package org.ounl.noisenotifier.fcube.config;
 
+import org.ounl.noisenotifier.NoiseUtils;
 import org.ounl.noisenotifier.fcube.Constants;
+import org.ounl.noisenotifier.feeback.FeedbackColor;
+import org.ounl.noisenotifier.feeback.FeedbackColorFactory;
 
 
 public class FeedbackCubeConfig {
@@ -80,7 +83,7 @@ public class FeedbackCubeConfig {
 	private double[] mNoiseArray  = {INIT_THRESHOLD,INIT_THRESHOLD,INIT_THRESHOLD,INIT_THRESHOLD,INIT_THRESHOLD};
 	
 	// Color gradient
-	private FeedbackCubeColorFactory mfccFactory = new FeedbackCubeColorFactory();
+	private FeedbackColorFactory mfccFactory = new FeedbackColorFactory();
 	
 	
 	
@@ -185,7 +188,7 @@ public class FeedbackCubeConfig {
 	 * 
 	 * @return the mNoiseArray
 	 */
-	public FeedbackCubeColor getBufferColor() {
+	public FeedbackColor getBufferColor() {
 		
 		double dSum = 0;
 		double dAVGBufferNoise = 0;
@@ -201,28 +204,34 @@ public class FeedbackCubeConfig {
 		// Look for mapping of the noise within the color gradient
 		//		
 		
+		NoiseUtils nu = new NoiseUtils();
+		return nu.getFeedbackColor(dAVGBufferNoise, mThresholdMax, mThresholdMin);
+		
 		
 // Commented for callibration		
 		
 		
-		int iPos = 0;
-		if(dAVGBufferNoise > mThresholdMax){
-			// Supera 
-			iPos = FeedbackCubeColorFactory.COLOR_GRADIENT_SIZE -1;
-		}else if(dAVGBufferNoise < mThresholdMin){
-			// Esta por debajo
-			iPos = 0;
-		}else{
-			// Esta en el rango
-			double dRange = mThresholdMax - mThresholdMin;
-			double dStep = dRange / FeedbackCubeColorFactory.COLOR_GRADIENT_SIZE; 
-			double dPos = ((dAVGBufferNoise - mThresholdMin)/dStep);
-			iPos = (int)dPos;
-
-			//dBufferPos = ((FeedbackCubeColorFactory.COLOR_GRADIENT_SIZE * (dAVGBufferNoise - mThresholdMin)) / (mThresholdMax - mThresholdMin));	
-		}	
-		return mfccFactory.getColor(iPos);
 		
+		
+		
+//		int iPos = 0;
+//		if(dAVGBufferNoise > mThresholdMax){
+//			// Supera 
+//			iPos = FeedbackColorFactory.COLOR_GRADIENT_SIZE -1;
+//		}else if(dAVGBufferNoise < mThresholdMin){
+//			// Esta por debajo
+//			iPos = 0;
+//		}else{
+//			// Esta en el rango
+//			double dRange = mThresholdMax - mThresholdMin;
+//			double dStep = dRange / FeedbackColorFactory.COLOR_GRADIENT_SIZE; 
+//			double dPos = ((dAVGBufferNoise - mThresholdMin) / dStep);
+//			iPos = (int)dPos;
+//
+//			//dBufferPos = ((FeedbackCubeColorFactory.COLOR_GRADIENT_SIZE * (dAVGBufferNoise - mThresholdMin)) / (mThresholdMax - mThresholdMin));	
+//		}	
+//		return mfccFactory.getColor(iPos);
+//		
 
 // Added for callibration		
 //return null;

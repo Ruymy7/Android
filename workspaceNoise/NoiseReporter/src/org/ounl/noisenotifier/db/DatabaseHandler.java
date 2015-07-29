@@ -21,6 +21,7 @@ package org.ounl.noisenotifier.db;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.ounl.noisenotifier.db.tables.MinStepPJ;
 import org.ounl.noisenotifier.db.tables.NoiseSampleDb;
 import org.ounl.noisenotifier.db.tables.NoiseSamplePJ;
 import org.ounl.noisenotifier.db.tables.NoiseSaladPJ;
@@ -126,6 +127,27 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		sqliteDB.close();
 		return list;
 	}
+	
+	/**
+	 * Get min and step NoiseSample for a given tag
+	 * 
+	 * @return
+	 */
+	public MinStepPJ getMinStepNoiseSamples(String aTag, int aNumSteps) {
+		
+		MinStepPJ ms = null;
+		String selectQuery = "SELECT min(decibels), max(decibels), (max(decibels) - min(decibels))/"+aNumSteps+" as step FROM "+ NoiseSampleDb.TABLE_NAME+" WHERE tag ='"+aTag+"'" ;
+		System.out.println(selectQuery);
+		
+		sqliteDB = this.getWritableDatabase();
+		Cursor cursor = sqliteDB.rawQuery(selectQuery, null);
+		if (cursor.moveToFirst()) {
+			ms = new MinStepPJ(cursor);
+		}
+		cursor.close();
+		sqliteDB.close();
+		return ms;
+	}	
 	
 	/**
 	 * Get subjects from database ordered by order
@@ -239,6 +261,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	/**
 	 * Get Tags from database
+	 * 
+	 * WATCH OUT. THIS IS HARD CODED CONFIGURED FOR 7 LEVELS OF NOISE
 	 * 
 	 * @return
 	 */

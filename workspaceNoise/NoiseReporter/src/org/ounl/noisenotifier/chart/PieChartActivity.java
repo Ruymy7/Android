@@ -34,7 +34,9 @@ import org.ounl.noisenotifier.NoiseUtils;
 import org.ounl.noisenotifier.R;
 import org.ounl.noisenotifier.SubjectsActivity;
 import org.ounl.noisenotifier.db.DatabaseHandler;
+import org.ounl.noisenotifier.db.tables.MinStepPJ;
 import org.ounl.noisenotifier.db.tables.NoiseSaladPJ;
+import org.ounl.noisenotifier.feeback.FeedbackColor;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -55,34 +57,6 @@ public class PieChartActivity extends Activity {
 
 	private String CLASSNAME = this.getClass().getName();
 
-	private static int[] COLORS = new int[] {
-			Color.parseColor(ChartUtils.COLOUR_A),
-			Color.parseColor(ChartUtils.COLOUR_B),
-			Color.parseColor(ChartUtils.COLOUR_C),
-			Color.parseColor(ChartUtils.COLOUR_D),
-			Color.parseColor(ChartUtils.COLOUR_E),
-			Color.parseColor(ChartUtils.COLOUR_F),
-			Color.parseColor(ChartUtils.COLOUR_G),
-			Color.parseColor(ChartUtils.COLOUR_H),
-			Color.parseColor(ChartUtils.COLOUR_I),
-			Color.parseColor(ChartUtils.COLOUR_K),
-			Color.parseColor(ChartUtils.COLOUR_L),
-			Color.parseColor(ChartUtils.COLOUR_M),
-			Color.parseColor(ChartUtils.COLOUR_N),
-			Color.parseColor(ChartUtils.COLOUR_O),
-			Color.parseColor(ChartUtils.COLOUR_P),
-			Color.parseColor(ChartUtils.COLOUR_Q),
-			Color.parseColor(ChartUtils.COLOUR_R),
-			Color.parseColor(ChartUtils.COLOUR_S),
-			Color.parseColor(ChartUtils.COLOUR_T),
-			Color.parseColor(ChartUtils.COLOUR_U),
-			Color.parseColor(ChartUtils.COLOUR_V),
-			Color.parseColor(ChartUtils.COLOUR_W),
-			Color.parseColor(ChartUtils.COLOUR_X),
-			Color.parseColor(ChartUtils.COLOUR_Y),
-			Color.parseColor(ChartUtils.COLOUR_Z)
-
-	};
 
 	private static double[] VALUES;
 	private static String[] NAME_LIST;
@@ -91,16 +65,18 @@ public class PieChartActivity extends Activity {
 	private DefaultRenderer renderer = new DefaultRenderer();
 	private GraphicalView mChartView;
 	private String mTag;
+	private NoiseUtils noiseUtils;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.piechart);
 		db = new DatabaseHandler(getApplicationContext());
+		noiseUtils = new NoiseUtils();
 
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
-			mTag = extras.getString("POSITION");
+			mTag = extras.getString("TAG");
 		}
 
 		final ActionBar actionBar = getActionBar();
@@ -122,8 +98,11 @@ public class PieChartActivity extends Activity {
 		renderer.setStartAngle(90);
 
 		// Retrieve values from database
-		OBTENER TAG MIN Y STEP DE BD PARA PASARLO COMO PARAMETRO
-		List<NoiseSaladPJ> las = db.getSalat();
+		
+		MinStepPJ ms = db.getMinStepNoiseSamples(mTag, Constants.NOISE_LEVELS);
+//		Log.d(CLASSNAME,  " Fruit " + NAME_LIST[i] + " / Count " + VALUES[i]);
+		List<NoiseSaladPJ> las = db.getSalat(mTag, ms.getMinDecibels(), ms.getStepDecibels());
+		
 		NAME_LIST = new String[las.size()];
 		VALUES = new double[las.size()];
 
@@ -134,7 +113,11 @@ public class PieChartActivity extends Activity {
 			VALUES[i] = las.get(i).getCount();
 			mSeries.add(NAME_LIST[i], VALUES[i]);
 			SimpleSeriesRenderer ssr = new SimpleSeriesRenderer();
-			ssr.setColor(COLORS[(mSeries.getItemCount() - 1) % COLORS.length]);
+			
+			FeedbackColor fbc = noiseUtils.getFeedbackColor(i+1, Constants.NOISE_LEVELS, 1);
+			ssr.setColor(Color.parseColor(fbc.getHexColor()));
+			
+			//ssr.setColor(COLORS[(mSeries.getItemCount() - 1) % COLORS.length]);
 			renderer.addSeriesRenderer(ssr);
 			Log.d(CLASSNAME, i 
 					+ " Fruit " + NAME_LIST[i] 
@@ -213,11 +196,10 @@ public class PieChartActivity extends Activity {
 						// Toast.LENGTH_SHORT).show();
 					} else {
 						long lo = (long) seriesSelection.getValue();
-						NoiseUtils du = new NoiseUtils();
 
 						Toast.makeText(
 								PieChartActivity.this,
-								" You have invested " + du.duration(lo)
+								" You have invested " + noiseUtils.duration(lo)
 										+ " on ''", Toast.LENGTH_LONG).show();
 						// Temporary commented by btb
 						// Toast.makeText(
@@ -266,8 +248,9 @@ public class PieChartActivity extends Activity {
 	 */
 	private void populateChart() {
 
+		MinStepPJ ms = db.getMinStepNoiseSamples(mTag, 7);
+		List<NoiseSaladPJ> las = db.getSalat(mTag, ms.getMinDecibels(), ms.getStepDecibels());		
 		
-		List<NoiseSaladPJ> las = db.getSalat();
 		NAME_LIST = new String[las.size()];
 		VALUES = new double[las.size()];
 
@@ -281,31 +264,13 @@ public class PieChartActivity extends Activity {
 					+ VALUES[i]);
 		}
 		
-//		DatabaseHandler dbresult = new DatabaseHandler(this);
-//		HashMap<String, Long> mp = dbresult.getGoalsTime();
-//		VALUES = new double[mp.size()];
-//		NAME_LIST = new String[mp.size()];
-//		Iterator it = mp.entrySet().iterator();
-//		int ind = 0;
-//		while (it.hasNext()) {
-//			Map.Entry pairs = (Map.Entry) it.next();
-//
-//			System.out.println(ind + " " + pairs.getKey() + " = "
-//					+ pairs.getValue());
-//			NAME_LIST[ind] = (String) pairs.getKey();
-//
-//			// Milliseconds to minutes
-//			long milliseconds = (Long) pairs.getValue();
-//			// VALUES[ind] = ((milliseconds / (1000*60)) % 60);
-//			VALUES[ind] = ((milliseconds / (1000 * 60)));
-//			ind++;
-//
-//			it.remove();
-//
-//		}
+
 
 	}
 
+	//TAMBIEN TIENE QUE COLOCAR LAS LEYENDA DEL TOAS QUE SALE AL TOCAR CADA QUESITO ....O LA QUITAS A TOMAR POR CULO
+	
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

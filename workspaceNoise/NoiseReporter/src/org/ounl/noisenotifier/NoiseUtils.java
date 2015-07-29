@@ -20,9 +20,19 @@ package org.ounl.noisenotifier;
 
 import java.util.concurrent.TimeUnit;
 
+import org.ounl.noisenotifier.feeback.FeedbackColor;
+import org.ounl.noisenotifier.feeback.FeedbackColorFactory;
+
+import android.graphics.Color;
+
 
 public class NoiseUtils {
+
+	private FeedbackColorFactory fcf = null;
 	
+	public NoiseUtils(){
+		fcf = new FeedbackColorFactory();
+	}
 	
 	/**
 	 * Difference in minutes between check-in and check-out
@@ -141,13 +151,12 @@ public class NoiseUtils {
 	 * @param dNoise
 	 * @return
 	 */
-	private int getNoiseLevel(double dNoise, double dMinThres, double dMaxThres) {
+	public static int getNoiseLevel(double dNoise, double dMinThres, double dMaxThres) {
 		
 		try {
 			
-			int iLevels = 7;
 			double dDiff = dMaxThres - dMinThres;
-			double dEscalon = dDiff / iLevels;
+			double dEscalon = dDiff / Constants.NOISE_LEVELS;
 			
 			
 			if (dNoise < (dMinThres + (dEscalon*1)) ){
@@ -180,6 +189,106 @@ public class NoiseUtils {
 
 	}	
 	
+	/**
+	 * Returns image icon for a given noise level and thresholds
+	 * 
+	 * @param dNoise
+	 * @param dMinThres
+	 * @param dMaxThres
+	 * @return
+	 */
+	public static int getFruitImage(double dNoise, double dMinThres, double dMaxThres) {
+		
+		int iNL = getNoiseLevel(dNoise, dMinThres, dMaxThres);
+		return getFruitImage(iNL);				
+		
+	}
 	
+	/**
+	 * Return image identifier for a given NoiseLevel
+	 * @param aNoiseLevel
+	 * @return
+	 */
+	public static int getFruitImage(int aNoiseLevel){
+		
+		switch (aNoiseLevel) {
+		case 1:
+			return R.drawable.level1_175x;
+		case 2:			
+			return R.drawable.level2_175x;
+		case 3:
+			return R.drawable.level3_175x;			
+		case 4:
+			return R.drawable.level4_175x;
+		case 5:
+			return R.drawable.level5_175x;
+		case 6:
+			return R.drawable.level6_175x;
+		case 7:
+			return R.drawable.level7_175x;			
+		default:
+			return R.drawable.levelunknown_175x;
+		}
+		
+		
+	}
+	
+	/**
+	 * Returns feedback color for given noise and level
+	 * 
+	 * @param dAVGBufferNoise
+	 * @param mThresholdMax
+	 * @param mThresholdMin
+	 * @return
+	 */
+	public FeedbackColor getFeedbackColor(double dAVGBufferNoise, double mThresholdMax, double mThresholdMin){
+		
+		int iPos = 0;
+		if(dAVGBufferNoise > mThresholdMax){
+			// Supera 
+			iPos = FeedbackColorFactory.COLOR_GRADIENT_SIZE -1;
+		}else if(dAVGBufferNoise < mThresholdMin){
+			// Esta por debajo
+			iPos = 0;
+		}else{
+			// Esta en el rango
+			double dRange = mThresholdMax - mThresholdMin;
+			double dStep = dRange / FeedbackColorFactory.COLOR_GRADIENT_SIZE; 
+			double dPos = ((dAVGBufferNoise - mThresholdMin) / dStep);
+			iPos = (int)dPos;
+
+			//dBufferPos = ((FeedbackCubeColorFactory.COLOR_GRADIENT_SIZE * (dAVGBufferNoise - mThresholdMin)) / (mThresholdMax - mThresholdMin));	
+		}	
+		
+
+		
+		return fcf.getColor(iPos);		
+	}
+	
+	
+	/**
+	 * Returns Hex color for given level
+	 * @param mLevel
+	 * @return
+	 */
+	public String getHexColor(int mLevel){
+		
+		int iPos = 0;
+		double dStep = FeedbackColorFactory.COLOR_GRADIENT_SIZE / Constants.NOISE_LEVELS;
+		
+		iPos = (int)dStep * mLevel;
+		
+//		
+//		FeedbackColor fbc =  fcf.getColor(iPos);
+//		
+//		String sHexColor = fbc.getHexColor();
+//		
+//		Color.parseColor(sHexColor);
+//		
+		return fcf.getColor(iPos).getHexColor();
+		
+	}
+	
+
 
 }
