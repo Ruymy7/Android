@@ -35,7 +35,7 @@ public class Constants {
 	public static final String ICON_LEVEL_4 = "Papaya";
 	public static final String ICON_LEVEL_5 = "Banana";
 	public static final String ICON_LEVEL_6 = "Onion";
-	public static final String ICON_LEVEL_7 = "Cherry";
+	public static final String ICON_LEVEL_7 = "Pepper";
 	
 	
 	public static long SEM = 604800000;

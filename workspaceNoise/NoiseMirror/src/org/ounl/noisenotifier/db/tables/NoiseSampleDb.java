@@ -75,13 +75,16 @@ public class NoiseSampleDb{
 
 	public void loadContentValues(ContentValues cv) {
 
-//		 cv.put(KEY_TIMESTAMP, getlTimestamp());
-//		 cv.put(KEY_DECIBELS, getdDecibels());
-//		 cv.put(KEY_DECIBELSAVG, getdDecibelsavg());
+		 cv.put(KEY_TIMESTAMP, getlTimestamp());
+		 cv.put(KEY_DECIBELS, getdDecibels());
+		 cv.put(KEY_DECIBELSAVG, getdDecibelsavg());
+		 cv.put(KEY_TAG, getsTag());
+		 
+		 
 //		 cv.put(KEY_DECIBELSMINTHRESHOLD, getdDecibasdfaelsavg());
 //		 cv.put(KEY_DECIBELSMAXTHRESHOLD, getdDecibelasdfassavg());
 //		 
-//		 cv.put(KEY_TAG, getTag());
+;
 		 			
 	}
 

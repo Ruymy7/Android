@@ -28,6 +28,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class NoiseAlertActivity extends Activity {
 	/* constants */
@@ -36,13 +37,9 @@ public class NoiseAlertActivity extends Activity {
 	private boolean mRunning = false;
 
 	/** config state **/
-
 	private PowerManager.WakeLock mWakeLock;
-
 	private Handler mHandler = new Handler();
-
 	private DatabaseHandler db;
-	
 	private NoiseUtils nu = new NoiseUtils();
 
 	/* References to view elements */
@@ -57,6 +54,7 @@ public class NoiseAlertActivity extends Activity {
 	EditText etThresMax;
 	LinearLayout llTecla;
 	ImageView ivFruit;
+	ToggleButton mToggleButton;
 
 
 	private Runnable mSleepTask = new Runnable() {
@@ -104,17 +102,19 @@ public class NoiseAlertActivity extends Activity {
 					int iNum = FeedbackCubeConfig.getSingleInstance()
 							.addNoiseItem(amp);
 
-					// Return color for average values in buffeer
+					// Return color for average values in buffer
 					// Commented for calibration
 					readThreshold();
 					FeedbackColor color = FeedbackCubeConfig.getSingleInstance().getBufferColor();
 
-					// Launch color in the cube
-					FCColor fcc = new FCColor(FeedbackCubeConfig
+					// Send color whenever the cube is activated
+					if(mToggleButton.isChecked()){
+						// Launch color in the cube
+						FCColor fcc = new FCColor(FeedbackCubeConfig
 							.getSingleInstance().getIp(), "" + color.getR(), ""
 							+ color.getG(), "" + color.getB());
-					new FeedbackCubeManager().execute(fcc);
-
+						new FeedbackCubeManager().execute(fcc);
+					}
 					// Prepare log
 					ampAVG = FeedbackCubeConfig.getSingleInstance().getAverageNoise();
 					
@@ -161,6 +161,7 @@ public class NoiseAlertActivity extends Activity {
 		// Defined SoundLevelView in main.xml file
 		setContentView(R.layout.main);
 
+		mToggleButton = (ToggleButton) findViewById(R.id.tbFeedback);
 		mStatusView = (TextView) findViewById(R.id.status);
 		tv_noice = (TextView) findViewById(R.id.tv_noice);
 		bar = (ProgressBar) findViewById(R.id.progressBar1);
@@ -244,10 +245,7 @@ public class NoiseAlertActivity extends Activity {
 
 	private void stop() {
 		try {
-			// Switch cube off
-			Log.i("FC", "... closing feedback cube.");
-			FCOff f = new FCOff(FeedbackCubeConfig.getSingleInstance().getIp());
-			new FeedbackCubeManager().execute(f);
+
 
 			Log.i("Noise", "==== Stop Noise Monitoring===");
 			if (mWakeLock.isHeld()) {
@@ -296,23 +294,21 @@ public class NoiseAlertActivity extends Activity {
 	}
 
 	
-	/**
-	 * Clicked Power button
-	 * 
-	 * @param v
-	 */
-	public void onPower(View v) {
-		// Boot cube on
-		
-		
-		String sIp = etIP.getText().toString();
-		FeedbackCubeConfig.getSingleInstance().setIp(sIp);
-		Log.i("FC", "Starting feedback cube ..."+sIp);
-		
-		FCOn f = new FCOn(FeedbackCubeConfig.getSingleInstance().getIp());
-		new FeedbackCubeManager().execute(f);
-
-	}
+//	/**
+//	 * Clicked Power button
+//	 * 
+//	 * @param v
+//	 */
+//	public void onPower(View v) {
+//		// Boot cube on
+//		String sIp = etIP.getText().toString();
+//		FeedbackCubeConfig.getSingleInstance().setIp(sIp);
+//		Log.i("FC", "Starting feedback cube ..."+sIp);
+//		
+//		FCOn f = new FCOn(FeedbackCubeConfig.getSingleInstance().getIp());
+//		new FeedbackCubeManager().execute(f);
+//
+//	}
 	
 	/**
 	 * Clicked ON button
@@ -320,6 +316,8 @@ public class NoiseAlertActivity extends Activity {
 	 * @param v
 	 */
 	public void onOn(View v) {
+		// make button visible
+		ivFruit.setVisibility(0);
 		start();
 	}
 
@@ -330,8 +328,42 @@ public class NoiseAlertActivity extends Activity {
 	 */
 	public void onOff(View v) {
 		stop();
-		ivFruit.setImageResource(R.drawable.noise_175x);
+		//make fruit invisible
+		ivFruit.setVisibility(4);
+		//ivFruit.setImageResource(R.drawable.noise_175x);
 	}
+	
+
+	public void onToggle(View v) {
+		
+		ToggleButton tb = (ToggleButton)v;
+		
+		String sIp = etIP.getText().toString();
+		
+		if (tb.isChecked()){
+			System.out.println("CHECKED "+tb.isChecked());
+			
+			// Boot cube on
+			Log.i("FC", "Starting feedback cube ..."+sIp);			
+			FCOn f = new FCOn(sIp);
+			new FeedbackCubeManager().execute(f);
+
+			
+			
+		}else{
+			System.out.println("NOT CHECKED"+tb.isChecked());
+			
+			// Switch cube off
+			Log.i("FC", "Stoping feedback cube ..."+sIp);			
+			FCOff f = new FCOff(sIp);
+			new FeedbackCubeManager().execute(f);
+
+			
+		}
+		
+	}
+	
+	
 	
 	/**
 	 * Clicked Chart button

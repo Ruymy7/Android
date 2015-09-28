@@ -15,6 +15,7 @@
             android:layout_height="600dp"
             android:background="#5091FA" >
 
+<!--             
             <ImageView
                 android:id="@+id/imageViewPower"
                 android:layout_width="wrap_content"
@@ -22,6 +23,7 @@
                 android:layout_weight="1"
                 android:onClick="onPower"
                 android:src="@drawable/on100x" />
+ -->          
 
             <ImageView
                 android:id="@+id/imageViewOn"
@@ -39,11 +41,20 @@
                 android:onClick="onOff"
                 android:src="@drawable/mute" />
             
+            <ImageView
+                android:id="@+id/imageViewCharts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onChart"
+                android:src="@drawable/charts100x" />            
+            
 			<ImageView
                 android:id="@+id/imageViewFruit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:visibility="invisible"
                 android:src="@drawable/noise_175x" />            
             
        
@@ -166,7 +177,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="fill_vertical"
                 android:gravity="fill_vertical"
-                android:checked="true"
+                android:checked="false"
+                android:onClick="onToggle"
                 android:textColor="#acdced" />
                          
         </LinearLayout>
@@ -235,7 +247,7 @@
             android:text=""
             android:textAppearance="?android:attr/textAppearanceLarge" />
         
-        
+<!--         
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
@@ -256,7 +268,10 @@
                 android:onClick="onShare"
                 android:src="@drawable/share100x" />     
 
-        </LinearLayout>        
+        </LinearLayout>
+ -->        
+        
+        
     </LinearLayout>
 
 </ScrollView>
