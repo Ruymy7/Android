@@ -25,8 +25,6 @@ import org.ounl.btb.mooccaster.cast.refplayer.settings.CastPreference;
 import org.ounl.btb.mooccaster.cast.refplayer.utils.Utils;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Point;
@@ -35,8 +33,6 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnErrorListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.Uri;
-import android.nfc.NdefMessage;
-import android.nfc.NfcAdapter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -103,11 +99,6 @@ public class LocalPlayerActivity extends ActionBarActivity {
 	private VideoCastConsumerImpl mCastConsumer;
 	private TextView mAuthorView;
 
-	// NFC
-	private NfcAdapter mAdapter;
-	private PendingIntent mPendingIntent;
-	private NdefMessage mNdefPushMessage;
-	private AlertDialog mDialog;
 
 	/*
 	 * indicates whether we are doing a local or a remote playback
@@ -444,12 +435,6 @@ public class LocalPlayerActivity extends ActionBarActivity {
 		mCastManager.removeVideoCastConsumer(mCastConsumer);
 		mMini.removeOnMiniControllerChangedListener(mCastManager);
 		mCastManager.decrementUiCounter();
-
-		// NFC
-		if (mAdapter != null) {
-			mAdapter.disableForegroundDispatch(this);
-			mAdapter.disableForegroundNdefPush(this);
-		}
 	}
 
 	@Override

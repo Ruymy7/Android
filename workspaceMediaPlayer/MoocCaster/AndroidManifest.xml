@@ -12,13 +12,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     
-    <!-- NFC -->
-    <uses-permission android:name="android.permission.NFC" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />    
-
     <uses-feature android:name="android.hardware.wifi" android:required="true" />
-    <uses-feature android:name="android.hardware.nfc" />
+  
 
     <application
         android:name="org.ounl.btb.mooccaster.cast.refplayer.CastApplication"
@@ -41,12 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             
-            <!-- NFC. Handle notes detected from outside our application -->
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>            
-            
         </activity>
         
 
@@ -58,12 +47,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
-            
-            <!-- NFC -->
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
                         
         </activity>
         <activity
@@ -74,7 +57,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.ounl.btb.mooccaster.cast.refplayer.NFCVideoBrowserActivity" />
+                android:value="org.ounl.btb.mooccaster.cast.refplayer.VideoBrowserActivity" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
