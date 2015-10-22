@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
 
-    <string name="app_name">MediaPlayer</string>
+    <string name="app_name">MarineLitter</string>
     <string name="video_url">https://archive.org/download/hubble_video_tour_of_the_universe/hubble_video_tour_of_the_universe_512kb.mp4</string>
     <string name="app_id">6D676842</string>
     <string name="play_video">Play Video</string>
@@ -29,7 +29,7 @@
     <string name="unmute">Unmute</string>
     <string name="loading">Loading&#8230;</string>
     <string name="no_video_found">No video was found</string>
-    <string name="about_app">About DemoCast Player</string>
+    <string name="about_app">About MoocCaster Player</string>
     <string name="version">CastVideos: %1$s, CCL: %2$s</string>
     <string name="session_reconnection_attempt">Attempting to recover previous session&#8230;</string>
 

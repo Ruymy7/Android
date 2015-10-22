@@ -41,7 +41,7 @@ public class VideoBrowserListFragment extends ListFragment implements
 
     private static final String TAG = "VideoBrowserListFragment";
     private static final String CATALOG_URL =
-            "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/d.json";
+            "https://dl.dropboxusercontent.com/u/49435539/cast/document.json";
 //    private static final String CATALOG_URL =
 //            "https://dl.dropboxusercontent.com/u/49435539/video_list_es.json";    
 //    private static final String CATALOG_URL =

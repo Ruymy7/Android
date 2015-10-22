@@ -41,8 +41,8 @@ public class VideoProvider {
 
     private static final String TAG = "VideoProvider";
     private static String TAG_MEDIA = "videos";
-    private static String THUMB_PREFIX_URL =
-           "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/";
+    private static String THUMB_PREFIX_URL = "https://dl.dropboxusercontent.com/u/49435539/cast/";
+       //"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/";
     private static String TAG_CATEGORIES = "categories";
     private static String TAG_NAME = "name";
     private static String TAG_STUDIO = "studio";

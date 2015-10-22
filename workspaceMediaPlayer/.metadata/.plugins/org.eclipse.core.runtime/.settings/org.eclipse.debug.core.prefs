@@ -3,4 +3,4 @@
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.postmortemLaunchType=org.eclipse.cdt.dsf.gdb.launch.coreCLaunch,debug
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.remoteApplicationLaunchType=org.eclipse.rse.remotecdt.dsf.debug,debug
 eclipse.preferences.version=1
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="cmd.getCommand()"/>\n<expression enabled\="true" text\="cmd.getId()"/>\n<expression enabled\="true" text\="cmd.getColor()"/>\n</watchExpressions>\n
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="mm.getImages().get(0).getUrl().toString()"/>\n<expression enabled\="true" text\="mm.getString(MediaMetadata.KEY_TITLE)"/>\n<expression enabled\="true" text\="mm.getString(MediaMetadata.KEY_SUBTITLE)"/>\n<expression enabled\="true" text\="getThumbPrefix()"/>\n<expression enabled\="true" text\="videoUrl"/>\n<expression enabled\="true" text\="imageurl"/>\n<expression enabled\="true" text\="bigImageurl"/>\n</watchExpressions>\n
