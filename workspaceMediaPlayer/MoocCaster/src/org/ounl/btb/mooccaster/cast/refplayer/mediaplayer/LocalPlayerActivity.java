@@ -298,6 +298,7 @@ public class LocalPlayerActivity extends ActionBarActivity {
 		case PAUSED:
 			switch (mLocation) {
 			case LOCAL:
+				Log.d(TAG, "togglePlayback() is LOCAL.");
 				mVideoView.start();
 				if (!mCastManager.isConnecting()) {
 					Log.d(TAG, "Playing locally...");
@@ -310,6 +311,7 @@ public class LocalPlayerActivity extends ActionBarActivity {
 				updatePlaybackLocation(PlaybackLocation.LOCAL);
 				break;
 			case REMOTE:
+				Log.d(TAG, "togglePlayback() is REMOTE.");
 				try {
 					mCastManager.checkConnectivity();
 					Log.d(TAG, "Playing remotely...");
@@ -326,11 +328,13 @@ public class LocalPlayerActivity extends ActionBarActivity {
 			break;
 
 		case PLAYING:
+			Log.d(TAG, "togglePlayback() is PLAYING.");
 			mPlaybackState = PlaybackState.PAUSED;
 			mVideoView.pause();
 			break;
 
 		case IDLE:
+			Log.d(TAG, "togglePlayback() is IDLE.");
 			mVideoView.setVideoURI(Uri.parse(mSelectedMedia.getContentId()));
 			mVideoView.seekTo(0);
 			mVideoView.start();

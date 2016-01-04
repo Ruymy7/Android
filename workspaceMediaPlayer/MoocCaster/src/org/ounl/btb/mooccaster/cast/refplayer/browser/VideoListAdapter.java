@@ -80,6 +80,7 @@ public class VideoListAdapter extends ArrayAdapter<MediaInfo> {
         }
         aq.id(holder.titleView).text(mm.getString(MediaMetadata.KEY_TITLE));
         aq.id(holder.descrView).text(mm.getString(MediaMetadata.KEY_SUBTITLE));
+        
 
         return convertView;
     }

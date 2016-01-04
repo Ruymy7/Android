@@ -41,7 +41,9 @@ public class VideoBrowserListFragment extends ListFragment implements
 
     private static final String TAG = "VideoBrowserListFragment";
     private static final String CATALOG_URL =
-            "https://dl.dropboxusercontent.com/u/49435539/cast/document.json";
+            "https://dl.dropboxusercontent.com/u/49435539/cast/documentB5.json";
+//    private static final String CATALOG_URL =
+ //           "https://dl.dropboxusercontent.com/u/49435539/cast/document.json";    
 //    private static final String CATALOG_URL =
 //            "https://dl.dropboxusercontent.com/u/49435539/video_list_es.json";    
 //    private static final String CATALOG_URL =
@@ -110,13 +112,20 @@ public class VideoBrowserListFragment extends ListFragment implements
      * @param position
      */
     private void setFocus(ListView l, int position){
-    	int iNumItem= l.getChildCount();
-    	for (int i = 0; i < iNumItem; i++) {
-    		RelativeLayout vRow = (RelativeLayout)l.getChildAt(i);
-    		vRow.setBackgroundColor(Color.WHITE);
-		}
-    	
-    	l.getChildAt(position).setBackgroundColor(Color.parseColor(CastApplication.COLOR_ORANGE));
+//    	int iNumItem= l.getChildCount();
+//    	
+//    	
+//    	
+//    	LA MOVIDA AQUI ES QUE EL GETCHILDCOUNT DEVUELVE SOLO 8 ELEMENTOS
+//    	mientras que l.getAdapter().getCount(); devuelve 27
+//    	SI
+//    	
+//    	for (int i = 0; i < iNumItem; i++) {
+//    		RelativeLayout vRow = (RelativeLayout)l.getChildAt(i);
+//    		vRow.setBackgroundColor(Color.WHITE);
+//		}
+//    	
+//    	l.getChildAt(position).setBackgroundColor(Color.parseColor(CastApplication.COLOR_ORANGE));
     }
 
     private void handleNavigation(MediaInfo info, boolean autoStart) {

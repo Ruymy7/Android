@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="mediaplayer" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="subtitle"/>
+			<item value="getChildCount()"/>
+			<item value="mSelectedPosition"/>
+			<item value="mselecte"/>
 			<item value="mediaplayer"/>
 			<item value="nfc"/>
 			<item value="videobr"/>
 			<item value="toast"/>
-			<item value="fragment"/>
-			<item value="videolistadapter"/>
-			<item value="VideoBrowserActivity"/>
-			<item value="inflate"/>
 		</list>
 		<list key="replacehistory">
 		</list>

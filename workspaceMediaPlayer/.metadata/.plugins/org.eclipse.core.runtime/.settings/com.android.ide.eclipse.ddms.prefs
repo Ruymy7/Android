@@ -8,3 +8,4 @@ logcat.view.colsize.TID=46
 logcat.view.colsize.Tag=264
 logcat.view.colsize.Text=954
 logcat.view.colsize.Time=140
+logcat.view.filters.list=name\: 'LocalPlayerActivity', tag\: 'LocalPlayerActivity', text\: '', pid\: '', app\: '', level\: 'verbose', 
