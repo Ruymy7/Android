@@ -148,6 +148,7 @@ import android.util.Log;
 	public void initDatabaseHandler(Context ctx){		
 		db = new DatabaseHandler(ctx);	
 		hmActvitities = new HashMap<Integer, ActivitySession>();
+		
 	}
 	
 	

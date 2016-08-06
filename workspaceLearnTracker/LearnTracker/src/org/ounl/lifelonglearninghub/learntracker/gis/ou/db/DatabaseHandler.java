@@ -27,6 +27,7 @@ import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.tables.ActividadDb;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.tables.SubjectDb;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.ActivityDO;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.SubjectDO;
+import org.ounl.lifelonglearninghub.learntracker.gis.ou.session.Session;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -362,6 +363,58 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	    return iResult;
 	    
 	}	
+	
+	
+	/**
+	 * Loads default course into local database whenever there is no connection to backend
+	 * 
+	 */
+	public List<SubjectDb> addDefaultSubjects(){
+		
+		List<SubjectDb> lSDb = new ArrayList<SubjectDb>();
+		
+		
+		SubjectDb sdb0 = new SubjectDb("1000", "Default Spanish Course","Gramatica", "Self study", 1479945600000L, 18000000L, 1, 0);
+		SubjectDb sdb1 = new SubjectDb("1001", "Default Spanish Course","Escuchar", "Self study", 1480118400000L, 10800000L, 1, 1);
+		SubjectDb sdb2 = new SubjectDb("1002", "Default Spanish Course","Hablar", "Self study", 1480291200000L, 7200000L, 1, 2);
+		SubjectDb sdb3 = new SubjectDb("1003", "Default Spanish Course","Escribir", "Self study", 1480377600000L, 14400000L, 1, 3);
+		SubjectDb sdb4 = new SubjectDb("1004", "Default Spanish Course","Leccion 1", "Lecture", 1480550400000L, 18000000L, 1, 4);
+		SubjectDb sdb5 = new SubjectDb("1005", "Default Spanish Course","Leccion 2", "Lecture", 1480809600000L, 7200000L, 1, 5);
+		SubjectDb sdb6 = new SubjectDb("1006", "Default Spanish Course","Leccion 3", "Lecture", 1481068800000L, 7200000L, 1, 6);
+		SubjectDb sdb7 = new SubjectDb("1007", "Default Spanish Course","Leccion 4", "Lecture", 1481155200000L, 7200000L, 1, 7);
+		SubjectDb sdb8 = new SubjectDb("1008", "Default Spanish Course","Leccion 5", "Lecture", 1481241600000L, 7200000L, 1, 8);
+		SubjectDb sdb9 = new SubjectDb("1009", "Default Spanish Course","Examen final", "Evaluation", 1481328000000L, 7200000L, 1, 9);
+
+		
+//		SubjectDb sdb0 = new SubjectDb("DSC", "Default Spanish Course","Gramatica", "Self study", 1479945600000L, 18000000L, 1, 0);
+//		SubjectDb sdb1 = new SubjectDb("DSC", "Default Spanish Course","Escuchar", "Self study", 1480118400000L, 10800000L, 1, 1);
+//		SubjectDb sdb2 = new SubjectDb("DSC", "Default Spanish Course","Hablar", "Self study", 1480291200000L, 7200000L, 1, 2);
+//		SubjectDb sdb3 = new SubjectDb("DSC", "Default Spanish Course","Escribir", "Self study", 1480377600000L, 14400000L, 1, 3);
+//		SubjectDb sdb4 = new SubjectDb("DSC", "Default Spanish Course","Leccion 1", "Lecture", 1480550400000L, 18000000L, 1, 4);
+//		SubjectDb sdb5 = new SubjectDb("DSC", "Default Spanish Course","Leccion 2", "Lecture", 1480809600000L, 7200000L, 1, 5);
+//		SubjectDb sdb6 = new SubjectDb("DSC", "Default Spanish Course","Leccion 3", "Lecture", 1481068800000L, 7200000L, 1, 6);
+//		SubjectDb sdb7 = new SubjectDb("DSC", "Default Spanish Course","Leccion 4", "Lecture", 1481155200000L, 7200000L, 1, 7);
+//		SubjectDb sdb8 = new SubjectDb("DSC", "Default Spanish Course","Leccion 5", "Lecture", 1481241600000L, 7200000L, 1, 8);
+//		SubjectDb sdb9 = new SubjectDb("DSC", "Default Spanish Course","Examen final", "Evaluation", 1481328000000L, 7200000L, 1, 9);		
+		
+		lSDb.add(sdb0);
+		lSDb.add(sdb1);
+		lSDb.add(sdb2);
+		lSDb.add(sdb3);
+		lSDb.add(sdb4);
+		lSDb.add(sdb5);
+		lSDb.add(sdb6);
+		lSDb.add(sdb7);
+		lSDb.add(sdb8);
+		lSDb.add(sdb9);
+		
+		addSubject(lSDb);
+		
+		return lSDb;
+		
+		
+		
+	}
 
 
 }

@@ -26,7 +26,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.text.Collator;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -80,7 +84,7 @@ public class LoadingScreenActivity extends Activity {
 	private List<SubjectDb> lSDb;
 	
 	// Selected user
-	private UserDO user;
+//	private UserDO user;
 	
 
 
@@ -90,7 +94,7 @@ public class LoadingScreenActivity extends Activity {
 		setContentView(R.layout.splash);
 
 		Session.getSingleInstance().initDatabaseHandler(this);		
-		lSDb = Session.getSingleInstance().getDatabaseHandler().getSubjects();		
+		lSDb = Session.getSingleInstance().getDatabaseHandler().getSubjects();
 
 	}
 	
@@ -134,7 +138,9 @@ public class LoadingScreenActivity extends Activity {
 					// IF NOT VALID, 
 					//	READ LIST FROM BACKEND 
 					//	AND PROMPT USER
-					readUsersFromBackend(Session.getSingleInstance().getCourse_id());
+					//readUsersFromBackend(Session.getSingleInstance().getCourse_id());
+					
+					setDefaultUser();
 					
 					
 				}else{
@@ -316,9 +322,17 @@ public class LoadingScreenActivity extends Activity {
 				
 				if(lista.size() < 1){
 					Log.e(CLASSNAME, "Subject list is empty");
-//					Toast.makeText(getApplicationContext(),
-//							"Backend returned empty list of subjects", Toast.LENGTH_LONG)
-//							.show();
+					Toast.makeText(getApplicationContext(),
+							"Backend returned empty list of subjects. Default course will be dispayed", Toast.LENGTH_LONG)
+							.show();
+					
+					// Subjcts could not be loaded from backend. Load fake data
+					// Init database with fake data
+					List<SubjectDb> ldb = Session.getSingleInstance().getDatabaseHandler().addDefaultSubjects();
+					// Init session with fake data
+					Session.getSingleInstance().initActivitiesDb(ldb);
+					
+					
 				}
 				
 			}else{
@@ -388,50 +402,73 @@ public class LoadingScreenActivity extends Activity {
 	 * 
 	 * This method is only executed once when configuration is loaded for first time
 	 */
-	private void readUsersFromBackend(String sCoursId) {
-
-		Log.d(CLASSNAME, "Loading suers for the course "+sCoursId+" .");
+//	private void readUsersFromBackend(String sCoursId) {
+//
+//		Log.d(CLASSNAME, "Loading suers for the course "+sCoursId+" .");
+//		
+//		List<UserDO> listUsers;
+//
+//		UserWSGetAsyncTask wsat = new UserWSGetAsyncTask();
+//		
+//		try {
+//			listUsers = wsat.execute(sCoursId).get();
+//			
+//			if (listUsers != null){
+//				Log.d(CLASSNAME, "Backend returned list with "+listUsers.size()+" users.");
+//				
+//
+//				// Order list and
+//				cUserNames =  new TreeSet<String>(Collator.getInstance());
+//
+//				for (Iterator iterator = listUsers.iterator(); iterator.hasNext();) {
+//					
+//					UserDO u = (UserDO) iterator.next();
+//					hmUsers.put(u.getUserName(), u); 
+//					cUserNames.add(u.getUserName());
+//					
+//				}
+//				promptUserAcronym();
+//				
+//
+//				
+//			}else{
+//				Log.e(CLASSNAME, "Backend returned empty list of users.");
+//			}
+//			
+//			
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (ExecutionException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}		
+//		
+//		
+//	}
+	
+	/**
+	 * Set default user name (current time) and type (33)
+	 */
+	private void setDefaultUser() {
 		
-		List<UserDO> listUsers;
-
-		UserWSGetAsyncTask wsat = new UserWSGetAsyncTask();
+		Date d = new Date();		
+		DateFormat formatter = new SimpleDateFormat("ddMMyyyyHHmmss");
+		formatter.format(d);
 		
-		try {
-			listUsers = wsat.execute(sCoursId).get();
-			
-			if (listUsers != null){
-				Log.d(CLASSNAME, "Backend returned list with "+listUsers.size()+" users.");
-				
-
-				// Order list and
-				cUserNames =  new TreeSet<String>(Collator.getInstance());
-
-				for (Iterator iterator = listUsers.iterator(); iterator.hasNext();) {
-					
-					UserDO u = (UserDO) iterator.next();
-					hmUsers.put(u.getUserName(), u); 
-					cUserNames.add(u.getUserName());
-					
-				}
-				promptUserAcronym();
-				
-
-				
-			}else{
-				Log.e(CLASSNAME, "Backend returned empty list of users.");
-			}
-			
-			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}		
+		int iDefaultType = 33;
 		
+    	Session.getSingleInstance().setUserName(formatter.format(d));
+    	Session.getSingleInstance().setUserType(iDefaultType);
+    	Session.getSingleInstance().printProperties();
+    	
+    	
+    	// Write into mobile for forthcoming sessions
+    	writeUserPropertiesFile(formatter.format(d), ""+iDefaultType);
 		
 	}
+	
+	
 	
 
 	
@@ -440,54 +477,54 @@ public class LoadingScreenActivity extends Activity {
 	 * Prompt user to select his user name from a list 
 	 * 
 	 */
-	private void promptUserAcronym() {
-
-		
-		AlertDialog.Builder builderSingle = new AlertDialog.Builder(LoadingScreenActivity.this);
-        builderSingle.setIcon(R.drawable.ic_launcher);
-        builderSingle.setTitle("Select your user:");
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.select_dialog_singlechoice);
-        
-        for (Iterator it = cUserNames.iterator(); it.hasNext();) {
-			String u = (String) it.next();
-			arrayAdapter.add(u);
-			
-		}
-
-
-        builderSingle.setAdapter(arrayAdapter,
-                new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String sUserName = arrayAdapter.getItem(which);
-                        user = hmUsers.get(sUserName);
-                        
-                    	Log.i(CLASSNAME, "Selected "+arrayAdapter.getItem(which));
-                    	                    	
-                    	promptPass();
-                    }
-                });
-        builderSingle.show();		
-
-	}
+//	private void promptUserAcronym() {
+//
+//		
+//		AlertDialog.Builder builderSingle = new AlertDialog.Builder(LoadingScreenActivity.this);
+//        builderSingle.setIcon(R.drawable.ic_launcher);
+//        builderSingle.setTitle("Select your user:");
+//        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+//                this,
+//                android.R.layout.select_dialog_singlechoice);
+//        
+//        for (Iterator it = cUserNames.iterator(); it.hasNext();) {
+//			String u = (String) it.next();
+//			arrayAdapter.add(u);
+//			
+//		}
+//
+//
+//        builderSingle.setAdapter(arrayAdapter,
+//                new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        String sUserName = arrayAdapter.getItem(which);
+//                        user = hmUsers.get(sUserName);
+//                        
+//                    	Log.i(CLASSNAME, "Selected "+arrayAdapter.getItem(which));
+//                    	                    	
+//                    	promptPass();
+//                    }
+//                });
+//        builderSingle.show();		
+//
+//	}
 	
 	private void promptCourses() {
 
 		
 		AlertDialog.Builder builderSingle = new AlertDialog.Builder(LoadingScreenActivity.this);
-        builderSingle.setIcon(R.drawable.ic_launcher);
+        builderSingle.setIcon(R.drawable.course_50x);
         builderSingle.setTitle("Select course:");
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.select_dialog_singlechoice);
+
+        // AQUI tendras que añadir cursos que leas de la query y si no hay conexion meter el curso po defecto
+        arrayAdapter.add(Session.getSingleInstance().getCourse_id());
+ 
         
-        arrayAdapter.add("German");
-        arrayAdapter.add("English");
-        arrayAdapter.add("Yoga");
-        arrayAdapter.add("Pilates");        
         
         builderSingle.setAdapter(arrayAdapter,
                 new DialogInterface.OnClickListener() {
@@ -498,7 +535,7 @@ public class LoadingScreenActivity extends Activity {
                     	Log.i(CLASSNAME, "Selected course "+arrayAdapter.getItem(which));
 
                 		TextView tvCourseId = (TextView) findViewById(R.id.tvPropCourseId);
-                		tvCourseId.setText("Course:"+arrayAdapter.getItem(which));                		
+                		tvCourseId.setText("Course: "+arrayAdapter.getItem(which));                		
                     	
                     	                    	
 
@@ -510,66 +547,66 @@ public class LoadingScreenActivity extends Activity {
 	
 
 
-	public void promptPass() {
-		
-		LayoutInflater li = LayoutInflater.from(this);
-		View promptsView = li.inflate(R.layout.prompts, null);
-		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setView(promptsView);
-
-		TextView tvPrompt = (TextView) promptsView.findViewById(R.id.textViewPrompt);
-		tvPrompt.setText("Enter password for user "+ user.getUserName());
-		final EditText userInput = (EditText) promptsView
-				.findViewById(R.id.editTextPrompt);
-		userInput.setText("123");
-
-		alertDialogBuilder.setCancelable(false).setPositiveButton(
-				"Ready", new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int id) {
-						
-
-						
-						String sProp = Session.getSingleInstance().getCourse_id().toLowerCase();
-						// TODO Modify this hardcoded password
-						sProp = "ounl".toLowerCase();
-						String sEnter = userInput.getText().toString().toLowerCase();
-						
-// Password prompt commented temporarily						
-//						if(sProp.compareTo(sEnter) == 0){
-							
-	                    	// Write into session
-	                    	Session.getSingleInstance().setUserName(user.getUserName());
-	                    	Session.getSingleInstance().setUserType(user.getUserType());
-	                    	Session.getSingleInstance().printProperties();
-	                    	
-	                    	// Write into mobile for forthcoming sessions
-	                    	writeUserPropertiesFile(user.getUserName(), ""+user.getUserType());
-
-
-	                    	showDataSplash();
-	                    	
-	                    	// Populate activities for this user
-	                    	populateActivitiesFromBackend(Session.getSingleInstance().getCourse_id(), user.getUserName());							
-							
-// Password prompt commented temporarily							
-//						}else{
-//							Toast.makeText(getApplicationContext(),
-//									"Wrong password. Ask your teacher for the login information.", 
-//									Toast.LENGTH_LONG)
-//									.show();
-//							showBlockingSplash();
-//						}
-						
-						
-						
-						dialog.dismiss();
-
-					}
-				});
-
-		AlertDialog alertDialog = alertDialogBuilder.create();
-		alertDialog.show();
-	}	
+//	public void promptPass() {
+//		
+//		LayoutInflater li = LayoutInflater.from(this);
+//		View promptsView = li.inflate(R.layout.prompts, null);
+//		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+//		alertDialogBuilder.setView(promptsView);
+//
+//		TextView tvPrompt = (TextView) promptsView.findViewById(R.id.textViewPrompt);
+//		tvPrompt.setText("Enter password for user "+ user.getUserName());
+//		final EditText userInput = (EditText) promptsView
+//				.findViewById(R.id.editTextPrompt);
+//		userInput.setText("123");
+//
+//		alertDialogBuilder.setCancelable(false).setPositiveButton(
+//				"Ready", new DialogInterface.OnClickListener() {
+//					public void onClick(DialogInterface dialog, int id) {
+//						
+//
+//						
+//						String sProp = Session.getSingleInstance().getCourse_id().toLowerCase();
+//						// TODO Modify this hardcoded password
+//						sProp = "ounl".toLowerCase();
+//						String sEnter = userInput.getText().toString().toLowerCase();
+//						
+//// Password prompt commented temporarily						
+////						if(sProp.compareTo(sEnter) == 0){
+//							
+//	                    	// Write into session
+//	                    	Session.getSingleInstance().setUserName(user.getUserName());
+//	                    	Session.getSingleInstance().setUserType(user.getUserType());
+//	                    	Session.getSingleInstance().printProperties();
+//	                    	
+//	                    	// Write into mobile for forthcoming sessions
+//	                    	writeUserPropertiesFile(user.getUserName(), ""+user.getUserType());
+//
+//
+//	                    	showDataSplash();
+//	                    	
+//	                    	// Populate activities for this user
+//	                    	populateActivitiesFromBackend(Session.getSingleInstance().getCourse_id(), user.getUserName());							
+//							
+//// Password prompt commented temporarily							
+////						}else{
+////							Toast.makeText(getApplicationContext(),
+////									"Wrong password. Ask your teacher for the login information.", 
+////									Toast.LENGTH_LONG)
+////									.show();
+////							showBlockingSplash();
+////						}
+//						
+//						
+//						
+//						dialog.dismiss();
+//
+//					}
+//				});
+//
+//		AlertDialog alertDialog = alertDialogBuilder.create();
+//		alertDialog.show();
+//	}	
 	
 
 	/**
@@ -583,14 +620,12 @@ public class LoadingScreenActivity extends Activity {
 		alertDialogBuilder.setView(promptsView);
 
 		TextView tvPrompt = (TextView) promptsView.findViewById(R.id.textViewPrompt);
-		tvPrompt.setText("Enter new user name");
+		tvPrompt.setText("Update user name");
 		final EditText userInput = (EditText) promptsView
 				.findViewById(R.id.editTextPrompt);
 				
-		if(user != null){
-			if(user.getUserName() != null){
-				userInput.setText(user.getUserName());				
-			}			
+		if(Session.getSingleInstance().getUserName() != null){
+			userInput.setText(Session.getSingleInstance().getUserName());
 		}
 		
 
@@ -777,8 +812,8 @@ public class LoadingScreenActivity extends Activity {
 		
 						
 		tvUserId.setText("User: "+Session.getSingleInstance().getUserName());
-		tvCourseId.setText("Course:"+Session.getSingleInstance().getCourse_id());
-		tvVers.setText("Version:"+Session.getSingleInstance().getVersion());
+		tvCourseId.setText("Course: "+Session.getSingleInstance().getCourse_id());
+		tvVers.setText("Version: "+Session.getSingleInstance().getVersion());
 		
 	}
 
@@ -790,10 +825,10 @@ public class LoadingScreenActivity extends Activity {
 		ivBlock.setOnClickListener(null);
 
 		TextView tvCourseId = (TextView) findViewById(R.id.tvPropCourseId);
-		tvCourseId.setText("Course:"+Session.getSingleInstance().getCourse_id());
+		tvCourseId.setText("Course: "+Session.getSingleInstance().getCourse_id());
 		
 		TextView tvVers = (TextView) findViewById(R.id.tvPropVersion);
-		tvVers.setText("Version:"+Session.getSingleInstance().getVersion());
+		tvVers.setText("Version: "+Session.getSingleInstance().getVersion());
 		
 	}	
 	
