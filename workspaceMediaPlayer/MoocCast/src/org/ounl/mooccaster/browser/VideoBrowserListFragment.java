@@ -39,17 +39,17 @@ import java.util.List;
 public class VideoBrowserListFragment extends ListFragment implements
         LoaderManager.LoaderCallbacks<List<MediaInfo>> {
 
-    private static final String TAG = "VideoBrowserListFragment";
-    private static final String CATALOG_URL =
-            "https://dl.dropboxusercontent.com/u/49435539/cast/documentB5.json";
-//    private static final String CATALOG_URL =
- //           "https://dl.dropboxusercontent.com/u/49435539/cast/document.json";    
-//    private static final String CATALOG_URL =
-//            "https://dl.dropboxusercontent.com/u/49435539/video_list_es.json";    
-//    private static final String CATALOG_URL =
-//            "https://dl.dropboxusercontent.com/u/49435539/video_list_es.json";    
-//    private static final String CATALOG_URL =
-//            "https://dl.dropboxusercontent.com/u/49435539/mobile_list_ou.json";    
+//    private static final String TAG = "VideoBrowserListFragment";
+////    private static final String CATALOG_URL =
+////            "https://dl.dropboxusercontent.com/u/49435539/cast/documentB5.json";
+////    private static final String CATALOG_URL =
+// //           "https://dl.dropboxusercontent.com/u/49435539/cast/document.json";    
+////    private static final String CATALOG_URL =
+////            "https://dl.dropboxusercontent.com/u/49435539/video_list_es.json";    
+////    private static final String CATALOG_URL =
+////            "https://dl.dropboxusercontent.com/u/49435539/video_list_es.json";    
+////    private static final String CATALOG_URL =
+////            "https://dl.dropboxusercontent.com/u/49435539/mobile_list_ou.json";    
     
     
     
@@ -142,7 +142,7 @@ public class VideoBrowserListFragment extends ListFragment implements
      */
     @Override
     public Loader<List<MediaInfo>> onCreateLoader(int arg0, Bundle arg1) {
-        return new VideoItemLoader(getActivity(), CATALOG_URL);
+        return new VideoItemLoader(getActivity(), CastApplication.DEFAUT_CATALOG_URL);
     }
 
     public static VideoBrowserListFragment newInstance() {

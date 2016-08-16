@@ -17,10 +17,10 @@
 package org.ounl.mooccaster.settings;
 
 import org.ounl.mooccaster.R;
-
-
 import org.ounl.mooccaster.CastApplication;
 import org.ounl.mooccaster.utils.Utils;
+
+
 
 // Commented by btb import com.google.sample.cast.refplayer.R;
 import com.google.sample.castcompanionlibrary.cast.VideoCastManager;
@@ -34,19 +34,22 @@ import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
+
 public class CastPreference extends PreferenceActivity
         implements OnSharedPreferenceChangeListener {
 
     public static final String FTU_SHOWN_KEY = "ftu_shown";
     public static final String VOLUME_SELCTION_KEY = "volume_target";
     public static final String TERMINATION_POLICY_KEY = "termination_policy";
+    public static final String URL_PLAYLIST_KEY = "url_playlist";
     public static final String STOP_ON_DISCONNECT = "1";
     public static final String CONTINUE_ON_DISCONNECT = "0";
     private ListPreference mVolumeListPreference;
     private SharedPreferences mPrefs;
     private VideoCastManager mCastManager;
     boolean mStopOnExit;
-    private ListPreference mTerminationListPreference;
+    private ListPreference mTerminationListPreference;    
+    private EditTextPreference mURLPlayListPreference;
 
     @SuppressWarnings("deprecation")
     @Override
@@ -57,6 +60,14 @@ public class CastPreference extends PreferenceActivity
         mPrefs.registerOnSharedPreferenceChangeListener(this);
         mCastManager = CastApplication.getCastManager(this);
 
+        // -- URL to JSON playlist -------------------//        
+        mURLPlayListPreference = (EditTextPreference) getPreferenceScreen().findPreference(
+                URL_PLAYLIST_KEY);
+        mURLPlayListPreference.setSummary(CastApplication.DEFAUT_CATALOG_URL);
+        POR AQUI TE HAS QUEDADO
+        
+        
+        
         // -- Termination Policy -------------------//
         mTerminationListPreference = (ListPreference) getPreferenceScreen().findPreference(
                 TERMINATION_POLICY_KEY);
@@ -87,8 +98,17 @@ public class CastPreference extends PreferenceActivity
         } else if (TERMINATION_POLICY_KEY.equals(key)) {
             mTerminationListPreference.setSummary(getTerminationSummary(sharedPreferences));
             mCastManager.setStopOnDisconnect(mStopOnExit);
+        } else if (URL_PLAYLIST_KEY.equals(key)) {
+
+        	// here you will have to save new values in CastApplication
+        	
+            String value = sharedPreferences.getString(URL_PLAYLIST_KEY, "");     
+        	mURLPlayListPreference.setSummary(value);
+        	
         }
     }
+    
+
 
     private String getTerminationSummary(SharedPreferences sharedPreferences) {
         String valueStr = sharedPreferences.getString(TERMINATION_POLICY_KEY, "0");

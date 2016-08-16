@@ -29,4 +29,7 @@
 <fullyQualifiedTypeName name="android.graphics.drawable.ColorDrawable"/>
 <fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.cast.refplayer.CastApplication"/>
 <fullyQualifiedTypeName name="org.ounl.lifelonglearninghub.mediaplayer.nfc.nfcrecord.IParsedNdefCommand"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.text.InputType"/>
+<fullyQualifiedTypeName name="org.ounl.mooccaster.CastApplication"/>
 </qualifiedTypeNameHistroy>

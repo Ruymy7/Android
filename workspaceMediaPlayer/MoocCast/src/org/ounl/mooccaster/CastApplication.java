@@ -34,6 +34,20 @@ public class CastApplication extends Application {
     public static final double VOLUME_INCREMENT = 0.05;
     public static final String COLOR_ORANGE = "#FCC668";
     
+    // Default playlist
+    public static final String DEFAUT_CATALOG_URL =
+            "https://dl.dropboxusercontent.com/u/49435539/cast/documentB5.json";
+//    public static final String CATALOG_URL =
+//           "https://dl.dropboxusercontent.com/u/49435539/cast/document.json";    
+//    public static final String CATALOG_URL =
+//            "https://dl.dropboxusercontent.com/u/49435539/video_list_es.json";    
+//    public static final String CATALOG_URL =
+//            "https://dl.dropboxusercontent.com/u/49435539/video_list_es.json";    
+//    public static final String CATALOG_URL =
+//            "https://dl.dropboxusercontent.com/u/49435539/mobile_list_ou.json";    
+        
+    
+    
     /*
      * (non-Javadoc)
      * @see android.app.Application#onCreate()

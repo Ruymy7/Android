@@ -3,6 +3,15 @@
 
     <PreferenceCategory
         android:summary="@string/prefs_header_application_summary"
+        android:title="@string/prefs_playlist" >
+        <EditTextPreference
+		    android:key="url_playlist"
+		    android:title="@string/prefs_playlist"
+		    android:summary="@string/prefs_playlist_summary"   
+		    android:inputType="text" />
+    </PreferenceCategory>    
+    <PreferenceCategory
+        android:summary="@string/prefs_header_application_summary"
         android:title="@string/prefs_header_application" >
         <ListPreference
             android:defaultValue="@string/prefs_termination_policy_default"

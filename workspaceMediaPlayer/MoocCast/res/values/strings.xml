@@ -29,8 +29,8 @@
     <string name="unmute">Unmute</string>
     <string name="loading">Loading&#8230;</string>
     <string name="no_video_found">No video was found</string>
-    <string name="about_app">About MoocCaster Player</string>
-    <string name="version">CastVideos: %1$s, CCL: %2$s</string>
+    <string name="about_app">About MoocCast</string>
+    <string name="version">Apache License, Version 2.0</string>
     <string name="session_reconnection_attempt">Attempting to recover previous session&#8230;</string>
 
     <!-- Error messages -->
@@ -54,6 +54,9 @@
     <string name="oops">Oops</string>
 
     <!-- Preferences -->
+    <string name="prefs_playlist">MOOC playlist</string>
+    <string name="prefs_playlist_summary">JSON file listing the videos of the course</string>
+        
     <string name="prefs_header_application">Application Behavior</string>
     <string name="prefs_header_application_summary">Control how the application behaves on the TV</string>
     <string name="prefs_termination_policy_default">0</string>
