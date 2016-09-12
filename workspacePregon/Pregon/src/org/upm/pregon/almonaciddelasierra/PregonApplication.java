@@ -18,16 +18,12 @@ public class PregonApplication extends Application {
 	DatabaseHandler db;
 	Properties config = new Properties();
 	
-//	private String version = "";
-//	private String ws_path = "";
-		
 	
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		
-	}
-	
+	}	
 
 	public List<EventDb> getEvents() {
 		return events;
@@ -65,17 +61,5 @@ public class PregonApplication extends Application {
 		this.config = config;
 	}	
 
-//	public void setProperties(Properties properties) {
-//		this.version = properties.getProperty(Constants.CP_VERSION);
-//		this.ws_path = properties.getProperty(Constants.CP_WS_PATH);		
-//	}	
-	
-//	public String getVersion() {
-//		return version;
-//	}
-//	
-//	public String getWSPath(){
-//		return this.ws_path;
-//	}	
 
 }

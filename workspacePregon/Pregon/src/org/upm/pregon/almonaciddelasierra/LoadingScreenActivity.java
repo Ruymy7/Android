@@ -46,9 +46,6 @@ public class LoadingScreenActivity extends Activity {
 	PregonApplication pa;
 	List<EventDb> listEventsDb;	
 	
-// Make http request periodically	
-//	http://stackoverflow.com/questions/20501225/using-service-to-run-background-and-create-notification
-	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +68,7 @@ public class LoadingScreenActivity extends Activity {
 		pa.setDb(db);
 		
 		
+		// Start notification service
 		startService(new Intent(this, MyService.class));
 		
 

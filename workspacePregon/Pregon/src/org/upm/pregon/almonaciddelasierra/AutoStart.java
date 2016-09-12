@@ -10,5 +10,4 @@ public class AutoStart extends BroadcastReceiver {
         context.startService(new Intent(context, MyService.class));
     }
 
-
 }
