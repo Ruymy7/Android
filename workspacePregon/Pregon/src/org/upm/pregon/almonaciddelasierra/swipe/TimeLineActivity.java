@@ -33,6 +33,7 @@ import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class TimeLineActivity extends FragmentActivity {
@@ -125,7 +126,24 @@ public class TimeLineActivity extends FragmentActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     
+    
+    
+	public void onClickSwitchAction(View v) {
+		Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
+		whatsappIntent.setType("text/plain");
+		whatsappIntent.setPackage("com.whatsapp");
+		whatsappIntent.putExtra(Intent.EXTRA_TEXT,
+				"The text you wanted to share");
+		try {
+			startActivity(whatsappIntent);
+		} catch (android.content.ActivityNotFoundException ex) {
+			// This message should be returned to the user
+			System.out.println("Whatsapp have not been installed.");
+		}
+
+	}
 
 
 }

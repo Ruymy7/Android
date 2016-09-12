@@ -114,12 +114,10 @@ public class ListViewEventsAdapter extends BaseAdapter {
 		long lDateStart = (Long)map.get(EventDb.KEY_TASK_DATE_START);
 		Date dDateStart = new Date();
 		dDateStart.setTime(lDateStart);
-		DateFormat df = new SimpleDateFormat("E, dd/MM/yyyy");  
+		// DateFormat df = SimpleDateFormat.getDateTimeInstance();
+		DateFormat df = new SimpleDateFormat("E, dd/MM/yyyy HH:mm:ss");  
 		String reportDate = df.format(dDateStart);
-		sr.tvField3.setText("  Begin: "+reportDate);
-		
-
-
+		sr.tvField3.setText("  "+reportDate);
 		
 		return v;
 	}
