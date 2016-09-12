@@ -82,20 +82,17 @@ public class LoadingScreenActivity extends Activity {
 		listEventsDb = pa.getDb().getEvents();
 		if (listEventsDb.size() == 0) {
 			// Load data from backend into local db and session
-			populateEventsFromBackend("N35231");
+			populateEventsFromBackend(pa.getConfig().getProperty(Constants.CP_COURSE_ID));
 		} else {
 			// Load into session
 			pa.setEvents(listEventsDb);
 		}	
-			
 
+		
+		
 		// Fill in form data
-		TextView tvUserId = (TextView) findViewById(R.id.tvPropUserId);
-		TextView tvCourseId = (TextView) findViewById(R.id.tvPropCourseId);
 		TextView tvVers = (TextView) findViewById(R.id.tvPropVersion);								
-		tvUserId.setText("User: Miguel Porlán Chendo");
-		tvCourseId.setText("Course: Nivel 2");
-		tvVers.setText("Version: Nivel 3");		
+		tvVers.setText("Version "+pa.getConfig().getProperty(Constants.CP_VERSION));		
 
 	}
 	

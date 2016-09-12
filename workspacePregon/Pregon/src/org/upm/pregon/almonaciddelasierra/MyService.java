@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutionException;
 
 import org.upm.pregon.almonaciddelasierra.db.ws.EventWSGetAsyncTask;
 import org.upm.pregon.almonaciddelasierra.db.ws.dataobjects.EventDO;
+import org.upm.pregon.almonaciddelasierra.swipe.EventsActivity;
 
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -37,7 +38,7 @@ public class MyService extends Service {
     		// There is a difference between:
     		//  - The number of items in backend
     		//  - The number of items in client db
-    		Intent intentNotif = new Intent(this, NotificationReceiverActivity.class);
+    		Intent intentNotif = new Intent(this, EventsActivity.class);
     		PendingIntent pIntent = PendingIntent.getActivity(this, 0, intentNotif, 0);
 
     		// Build notification
@@ -57,7 +58,32 @@ public class MyService extends Service {
 
     		notificationManager.notify(0, n);    				
     		
+    	}else{
+
+    		Intent intentNotif = new Intent(this, EventsActivity.class);
+    		PendingIntent pIntent = PendingIntent.getActivity(this, 0, intentNotif, 0);
+
+    		// Build notification
+    		// Actions are just fake
+    		Notification n = new Notification.Builder(this)
+    				.setContentTitle("FALSE New mail from " + "test@gmail.com")
+    				.setContentText("Subjectbbb")
+    				.setSmallIcon(R.drawable.ic_stat_name)
+    				.addAction(R.drawable.ic_stat_name, "Callbbb", pIntent)
+    				.addAction(R.drawable.ic_stat_name, "Dismissbbb", pIntent)
+    				.addAction(R.drawable.ic_stat_name, "No idebbb", pIntent)
+    				.setStyle(new Notification.BigTextStyle().bigText("Long textbbb"))
+    				.setContentIntent(pIntent).build();
+
+    		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+    		// Hide the notification after its selected
+
+    		notificationManager.notify(0, n);    		
+    		
     	}
+    	
+    	
+    	
     	
     	// Development guide for handling notifications
     	// https://developer.android.com/guide/topics/ui/notifiers/notifications.html

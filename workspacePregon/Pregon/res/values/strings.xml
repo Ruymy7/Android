@@ -3,7 +3,7 @@
 
     <string name="app_name">Pregon</string>
     <string name="menu_settings">Settings</string>
-    <string name="intro_message">Universidad Politécnica de Madrid. 2016</string>
+    <string name="intro_message">Ayuntamiento de Almonacid de la Sierra. 2016</string>
     <string name="piechart">pie</string>
     <string name="stackedchart">stacked</string>
     <string name="linechart">line</string>
