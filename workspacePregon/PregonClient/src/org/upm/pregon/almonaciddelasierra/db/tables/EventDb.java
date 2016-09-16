@@ -18,12 +18,13 @@
  ******************************************************************************/
 package org.upm.pregon.almonaciddelasierra.db.tables;
 
-import java.util.Date;
-
-import org.upm.pregon.almonaciddelasierra.db.ws.dataobjects.EventDO;
-
 import android.content.ContentValues;
 import android.database.Cursor;
+
+import org.upm.pregon.almonaciddelasierra.db.ws.dataobjects.EventDO;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class EventDb implements ITables {
 
@@ -181,6 +182,13 @@ public class EventDb implements ITables {
 
 	public long getlTaskDateStart() {
 		return lTaskDateStart;
+	}
+
+	public String getFormattedTaskDateStart() {
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		Date dDateStart = new Date(lTaskDateStart);
+
+		return df.format(dDateStart);
 	}
 
 	public void setlTaskDateStart(long lTaskDateStart) {

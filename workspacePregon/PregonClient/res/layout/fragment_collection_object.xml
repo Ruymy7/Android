@@ -16,21 +16,28 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/tvTopText"
+                android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Accumulated time for this task"
-                android:textSize="18dp" />
+                android:textSize="40dp" />
 
             <TextView
-                android:id="@+id/tvLongText"
+                android:id="@+id/tvSubTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="60dp" />
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/tvSubSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20dp" />
 
             <ImageView
                 android:id="@+id/ivActionActivity"

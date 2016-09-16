@@ -18,14 +18,14 @@
  ******************************************************************************/
 package org.upm.pregon.almonaciddelasierra.swipe;
 
-import java.util.List;
-
-import org.upm.pregon.almonaciddelasierra.db.tables.EventDb;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
+
+import org.upm.pregon.almonaciddelasierra.db.tables.EventDb;
+
+import java.util.List;
 
 /**
  * A {@link android.support.v4.app.FragmentStatePagerAdapter} that returns a fragment
@@ -80,7 +80,7 @@ public class EventFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
     		// Index out of bounds        	
             return "Index out of bounds. There is something wrong here :(";    		
     	}else{
-    		return ""+mEvents.get(position).getlTaskDateStart();
+    		return ""+mEvents.get(position).getFormattedTaskDateStart();
     	}
     	
     }

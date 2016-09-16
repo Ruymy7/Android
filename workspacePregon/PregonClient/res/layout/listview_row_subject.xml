@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:clickable="false" 
-        android:focusable="false">
+        android:focusable="false"
+        android:layout_marginLeft="5dp">
 
         <TextView
             android:id="@+id/tvSubjectLevel1"
@@ -40,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:layout_weight="1"
-            android:textColor="#666666"
+            android:textColor="#0071BC"
             android:gravity="left"
             android:textSize="16sp" 
             android:clickable="false"
@@ -52,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:layout_weight="1"
-            android:textColor="#cc510e"
+            android:textColor="#ED1C24"
             android:gravity="left"
             android:textSize="14sp" 
             android:clickable="false"

@@ -18,12 +18,6 @@
  ******************************************************************************/
 package org.upm.pregon.almonaciddelasierra.swipe;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.upm.pregon.almonaciddelasierra.PregonApplication;
-import org.upm.pregon.almonaciddelasierra.R;
-
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +28,14 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import org.upm.pregon.almonaciddelasierra.PregonApplication;
+import org.upm.pregon.almonaciddelasierra.R;
+import org.upm.pregon.almonaciddelasierra.WhatsappUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class TimeLineActivity extends FragmentActivity {
@@ -69,8 +71,8 @@ public class TimeLineActivity extends FragmentActivity {
         	
             Bundle args = new Bundle();
             args.putInt(EventFragment.ARG_POSITION, i);
-            args.putString(EventFragment.ARG_TOP_TEXT, pa.getEvents().get(i).getsTaskDesc());
-            args.putString(EventFragment.ARG_LONG_TEXT, pa.getEvents().get(i).getsTaskAltDesc());
+            args.putString(EventFragment.ARG_SUBTITLE, pa.getEvents().get(i).getsTaskDesc());
+            args.putString(EventFragment.ARG_SUBSUBTITLE, pa.getEvents().get(i).getsTaskAltDesc());
 
             dayF.setArguments(args);
             
@@ -131,11 +133,25 @@ public class TimeLineActivity extends FragmentActivity {
     
     
 	public void onClickSwitchAction(View v) {
+
+        //
+        // Alternatively this data could be obtained from local database
+        //
+        View vRoot = (View) v.getParent();
+        TextView tvTitle = (TextView)vRoot.findViewById(R.id.tvTitle);
+        TextView tvSubTitle = (TextView)vRoot.findViewById(R.id.tvSubTitle);
+        TextView tvSubSubTitle = (TextView)vRoot.findViewById(R.id.tvSubSubTitle);
+
+        String sMessage = WhatsappUtils.toBold(tvTitle.getText().toString());
+        sMessage += " | "+tvSubTitle.getText().toString();
+        sMessage += " | "+tvSubSubTitle.getText().toString();
+        sMessage += " | "+WhatsappUtils.getFirma();
+
 		Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
 		whatsappIntent.setType("text/plain");
 		whatsappIntent.setPackage("com.whatsapp");
-		whatsappIntent.putExtra(Intent.EXTRA_TEXT,
-				"The text you wanted to share");
+		whatsappIntent.putExtra(Intent.EXTRA_TEXT, sMessage);
+
 		try {
 			startActivity(whatsappIntent);
 		} catch (android.content.ActivityNotFoundException ex) {

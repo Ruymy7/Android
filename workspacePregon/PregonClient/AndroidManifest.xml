@@ -13,6 +13,7 @@
 
     <application
         android:name="org.upm.pregon.almonaciddelasierra.PregonApplication"
+        android:debuggable="true"
         android:allowBackup="true"
         android:alwaysRetainTaskState="true"
         android:icon="@drawable/ic_launcher"

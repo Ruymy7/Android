@@ -18,15 +18,6 @@
  ******************************************************************************/
 package org.upm.pregon.almonaciddelasierra.swipe;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import org.upm.pregon.almonaciddelasierra.PregonApplication;
-import org.upm.pregon.almonaciddelasierra.R;
-import org.upm.pregon.almonaciddelasierra.db.ListViewEventsAdapter;
-import org.upm.pregon.almonaciddelasierra.db.tables.EventDb;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
@@ -38,6 +29,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import org.upm.pregon.almonaciddelasierra.PregonApplication;
+import org.upm.pregon.almonaciddelasierra.R;
+import org.upm.pregon.almonaciddelasierra.db.ListViewEventsAdapter;
+import org.upm.pregon.almonaciddelasierra.db.tables.EventDb;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * A fragment that launches other parts of the demo application.
@@ -142,7 +142,29 @@ public class EventsActivity extends Activity {
                     NavUtils.navigateUpTo(this, upIntent);
                 }
                 return true;
-        }
+
+
+
+			case R.id.action_refresh:
+				Toast.makeText(this, "Refresh selected", Toast.LENGTH_SHORT).show();
+/*				MyListFragment fragment = (MyListFragment) getFragmentManager()
+						.findFragmentById(R.id.listFragment);
+				fragment.updateListContent();*/
+				break;
+			case R.id.action_settings:
+/*
+				Intent intent = new Intent(this, MyPreferences.class);
+				startActivity(intent);
+*/
+				Toast.makeText(this, "Action Settings selected", Toast.LENGTH_SHORT).show();
+				break;
+
+
+			default:
+				break;
+		}
+
+
         return super.onOptionsItemSelected(item);
     }	
 	
