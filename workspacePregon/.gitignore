@@ -26,10 +26,8 @@ proguard-project.txt
 # Desktop files
 .DS_Store
 
-
 # Sources from other projects
 .metadata/
-# 3LHubBackend
-# NFCBroadcasterServer/
-# NFCScanner/
 
+# Proxy configuration
+.recommenders/
