@@ -16,7 +16,7 @@
         android:id="@+id/tToolbar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        layout="@layout/my_toolbar" />
+        layout="@layout/pregonacid_toolbar" />
 
 
     <ListView

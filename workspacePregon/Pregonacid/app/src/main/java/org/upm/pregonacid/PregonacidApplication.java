@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Properties;
 
 
-public class PregonApplication extends Application {
+public class PregonacidApplication extends Application {
 	
 	
 	List<EventDb> events = new ArrayList<EventDb>();

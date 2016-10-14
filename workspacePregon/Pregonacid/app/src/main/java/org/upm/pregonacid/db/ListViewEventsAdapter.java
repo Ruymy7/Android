@@ -1,31 +1,4 @@
-/*******************************************************************************
- * Copyright (C) 2014 Open University of The Netherlands
- * Author: Bernardo Tabuenca Archilla
- * LearnTracker project 
- * 
- * This library is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public License
- * along with this library.  If not, see <http://www.gnu.org/licenses/>.
- ******************************************************************************/
 package org.upm.pregonacid.db;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-
-import org.upm.pregonacid.R;
-import org.upm.pregonacid.db.tables.EventDb;
 
 import android.app.Activity;
 import android.util.Log;
@@ -35,6 +8,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.upm.pregonacid.R;
+import org.upm.pregonacid.db.tables.EventDb;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
 public class ListViewEventsAdapter extends BaseAdapter {
 	
@@ -87,7 +69,7 @@ public class ListViewEventsAdapter extends BaseAdapter {
 
 		LayoutInflater inflater = activity.getLayoutInflater();
 		if (v == null) {
-			v = inflater.inflate(R.layout.listview_row_subject, null);
+			v = inflater.inflate(R.layout.event_list_row, null);
 			sr = new EventRow();
 			sr.iv = (ImageView) v.findViewById(R.id.ivSubjectIcon);
 			sr.tvField1 = (TextView) v.findViewById(R.id.tvSubjectLevel1);

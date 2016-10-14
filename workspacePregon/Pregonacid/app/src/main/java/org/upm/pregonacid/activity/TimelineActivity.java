@@ -1,4 +1,4 @@
-package org.upm.pregonacid.swipe;
+package org.upm.pregonacid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,22 +11,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import org.upm.pregonacid.PregonApplication;
+import org.upm.pregonacid.PregonacidApplication;
 import org.upm.pregonacid.R;
-import org.upm.pregonacid.WhatsappUtils;
+import org.upm.pregonacid.util.WhatsappUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class TimeLineActivity extends FragmentActivity {
+public class TimelineActivity extends FragmentActivity {
 	
 	private String CLASSNAME = this.getClass().getName();
 
 	private EventFragmentStatePagerAdapter mDemoCollectionPagerAdapter;
     private ViewPager mViewPager;
     private List<EventFragment> lDayFragments;
-    PregonApplication pa;
+    PregonacidApplication pa;
     
 
     private int iCurrentPos = 0;
@@ -34,9 +33,9 @@ public class TimeLineActivity extends FragmentActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collection_demo);
+        setContentView(R.layout.event_list_container);
         
-        pa = (PregonApplication)getApplication();        
+        pa = (PregonacidApplication)getApplication();
 
         lDayFragments = new ArrayList<EventFragment>();
         
@@ -67,7 +66,7 @@ public class TimeLineActivity extends FragmentActivity {
 	@Override	
 	protected void onResume(){
 		super.onResume();
-		Log.d(CLASSNAME, "onResume TimeLineActivity.");		
+		Log.d(CLASSNAME, "onResume TimelineActivity.");
 		
         mDemoCollectionPagerAdapter = new EventFragmentStatePagerAdapter(getSupportFragmentManager(), lDayFragments, pa.getEvents());        
         mDemoCollectionPagerAdapter.notifyDataSetChanged();        
@@ -86,7 +85,7 @@ public class TimeLineActivity extends FragmentActivity {
                 // This is called when the Home (Up) button is pressed in the action bar.
                 // Create a simple intent that starts the hierarchical parent activity and
                 // use NavUtils in the Support Package to ensure proper handling of Up.
-                Intent upIntent = new Intent(this, EventsActivity.class);
+                Intent upIntent = new Intent(this, EventListActivity.class);
                 if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
                     // This activity is not part of the application's task, so create a new task
                     // with a synthesized back stack.

@@ -1,4 +1,4 @@
-package org.upm.pregonacid;
+package org.upm.pregonacid.util;
 
 public class WhatsappUtils {
 

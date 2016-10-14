@@ -1,22 +1,4 @@
-/*******************************************************************************
- * Copyright (C) 2014 Open University of The Netherlands
- * Author: Bernardo Tabuenca Archilla
- * LearnTracker project 
- * 
- * This library is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public License
- * along with this library.  If not, see <http://www.gnu.org/licenses/>.
- ******************************************************************************/
-package org.upm.pregonacid.swipe;
+package org.upm.pregonacid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import org.upm.pregonacid.PregonApplication;
+import org.upm.pregonacid.PregonacidApplication;
 import org.upm.pregonacid.R;
 import org.upm.pregonacid.db.ListViewEventsAdapter;
 import org.upm.pregonacid.db.tables.EventDb;
@@ -39,7 +21,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class EventsActivity extends AppCompatActivity {
+public class EventListActivity extends AppCompatActivity {
 
 	private ArrayList<HashMap> list;
 	private ListView lview;
@@ -49,7 +31,7 @@ public class EventsActivity extends AppCompatActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_section_subjects);
+		setContentView(R.layout.fragment_event_list);
 
 
 		Toolbar myToolbar = (Toolbar) findViewById(R.id.tToolbar);
@@ -59,7 +41,7 @@ public class EventsActivity extends AppCompatActivity {
 		setSupportActionBar(myToolbar);
 
         
-		intent = new Intent(this, TimeLineActivity.class);
+		intent = new Intent(this, TimelineActivity.class);
 		lview = (ListView) findViewById(R.id.listviewSubjects);
 
 		lview.setOnItemClickListener(new OnItemClickListener() {
@@ -101,7 +83,7 @@ public class EventsActivity extends AppCompatActivity {
 	private void populateSubjectsFromLocal() {
 		list = new ArrayList<HashMap>();
 
-		PregonApplication pa = (PregonApplication)getApplication();
+		PregonacidApplication pa = (PregonacidApplication)getApplication();
 
 
 		for (EventDb t : pa.getDb().getEvents()) {
@@ -129,7 +111,7 @@ public class EventsActivity extends AppCompatActivity {
                 // This is called when the Home (Up) button is pressed in the action bar.
                 // Create a simple intent that starts the hierarchical parent activity and
                 // use NavUtils in the Support Package to ensure proper handling of Up.
-                Intent upIntent = new Intent(this, EventsActivity.class);
+                Intent upIntent = new Intent(this, EventListActivity.class);
                 if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
                     // This activity is not part of the application's task, so create a new task
                     // with a synthesized back stack.

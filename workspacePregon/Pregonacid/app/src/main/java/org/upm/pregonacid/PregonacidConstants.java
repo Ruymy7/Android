@@ -1,30 +1,8 @@
-/*******************************************************************************
-  * Copyright (C) 2014 Open University of The Netherlands
- * Author: Bernardo Tabuenca Archilla
- * LearnTracker project 
- * 
- * This library is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public License
- * along with this library.  If not, see <http://www.gnu.org/licenses/>.
- ******************************************************************************/
 package org.upm.pregonacid;
 
 import java.text.SimpleDateFormat;
 
-/**
- * @author Bernardo Tabuenca
- *
- */
-public class Constants {
+public class PregonacidConstants {
 	
 	
 	public static long SEM = 604800000;
@@ -52,7 +30,7 @@ public class Constants {
 	public final static int OPERATION_FAILED = 1;
 	
 
-	// Constants in config.properties. Read only file. Asset file
+	// PregonacidConstants in config.properties. Read only file. Asset file
 	public final static String CONFIG_PROPERTIES_FILE = "config.properties";
 	public final static String CP_VERSION = "version";
 	public final static String CP_COURSE_ID = "course_id";

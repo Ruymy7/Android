@@ -1,4 +1,4 @@
-package org.upm.pregonacid;
+package org.upm.pregonacid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +12,14 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.upm.pregonacid.EventPoolingService;
+import org.upm.pregonacid.PregonacidApplication;
+import org.upm.pregonacid.PregonacidConstants;
+import org.upm.pregonacid.R;
 import org.upm.pregonacid.db.DatabaseHandler;
 import org.upm.pregonacid.db.tables.EventDb;
 import org.upm.pregonacid.db.ws.EventWSGetAsyncTask;
 import org.upm.pregonacid.db.ws.dataobjects.EventDO;
-import org.upm.pregonacid.swipe.EventsActivity;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,11 +30,11 @@ import java.util.concurrent.ExecutionException;
 
 
 
-public class LoadingScreenActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 	
 	private String CLASSNAME = this.getClass().getName();
 	
-	PregonApplication pa;
+	PregonacidApplication pa;
 	List<EventDb> listEventsDb;
 	private ActionMenuView amvMenu;
 
@@ -50,11 +53,11 @@ public class LoadingScreenActivity extends AppCompatActivity {
 
 
 				
-		pa = (PregonApplication)getApplication();
+		pa = (PregonacidApplication)getApplication();
 		
 		// Load properties file from asset folder
 		try {
-			pa.setConfig(loadConfigProperties(Constants.CONFIG_PROPERTIES_FILE));				
+			pa.setConfig(loadConfigProperties(PregonacidConstants.CONFIG_PROPERTIES_FILE));
 		} catch (IOException e) {
 			Log.e(CLASSNAME, "Could not load properties file "+e.getMessage());
 			e.printStackTrace();
@@ -62,12 +65,12 @@ public class LoadingScreenActivity extends AppCompatActivity {
 		
 		// Init data base handler
 		DatabaseHandler db = new DatabaseHandler(this);
-		pa = (PregonApplication)getApplicationContext();
+		pa = (PregonacidApplication)getApplicationContext();
 		pa.setDb(db);
 		
 		
 		// Start notification service
-		startService(new Intent(this, MyService.class));
+		startService(new Intent(this, EventPoolingService.class));
 		
 
 	}
@@ -80,7 +83,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
 		listEventsDb = pa.getDb().getEvents();
 		if (listEventsDb.size() == 0) {
 			// Load data from backend into local db and session
-			populateEventsFromBackend(pa.getConfig().getProperty(Constants.CP_COURSE_ID));
+			populateEventsFromBackend(pa.getConfig().getProperty(PregonacidConstants.CP_COURSE_ID));
 		} else {
 			// Load into session
 			pa.setEvents(listEventsDb);
@@ -90,7 +93,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
 		
 		// Fill in form data
 		TextView tvVers = (TextView) findViewById(R.id.tvPropVersion);								
-		tvVers.setText("Version "+pa.getConfig().getProperty(Constants.CP_VERSION));		
+		tvVers.setText("Version "+pa.getConfig().getProperty(PregonacidConstants.CP_VERSION));
 
 	}
 	
@@ -110,7 +113,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
 		
 		try {
 			
-			String sURL = pa.getConfig().getProperty(Constants.CP_WS_GET_EVENTS_PATH);
+			String sURL = pa.getConfig().getProperty(PregonacidConstants.CP_WS_GET_EVENTS_PATH);
 			sURL+=sCoursId;			
 			
 			lista = wsat.execute(sURL).get();
@@ -119,7 +122,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
 				Log.d(CLASSNAME, "Backend returned list with "+lista.size()+" events.");
 				
 				// Save events into local database
-				pa.db.addListEventsDO(lista);
+				pa.getDb().addListEventsDO(lista);
 								
 				// Save activities into session
 				pa.setEventsDO(lista);				
@@ -203,7 +206,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
 
 
 	public void onClickSwipeButton(View v) {
-		Intent intent = new Intent(this, EventsActivity.class);
+		Intent intent = new Intent(this, EventListActivity.class);
 		startActivity(intent);
 		this.finish();
 	}

@@ -12,21 +12,21 @@ import android.widget.Toast;
 
 import org.upm.pregonacid.db.ws.EventWSGetAsyncTask;
 import org.upm.pregonacid.db.ws.dataobjects.EventDO;
-import org.upm.pregonacid.swipe.EventsActivity;
+import org.upm.pregonacid.activity.EventListActivity;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class MyService extends Service {
+public class EventPoolingService extends Service {
 	
 	private String CLASSNAME = this.getClass().getName();
 		
-	PregonApplication pa;
+	PregonacidApplication pa;
 	
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Query the database and show alarm if it applies
-		pa = (PregonApplication)getApplication();
+		pa = (PregonacidApplication)getApplication();
 		
     	boolean bResult = isUpdated("N35231");
     	
@@ -38,7 +38,7 @@ public class MyService extends Service {
     		// There is a difference between:
     		//  - The number of items in backend
     		//  - The number of items in client db
-    		Intent intentNotif = new Intent(this, EventsActivity.class);
+    		Intent intentNotif = new Intent(this, EventListActivity.class);
     		PendingIntent pIntent = PendingIntent.getActivity(this, 0, intentNotif, 0);
 
     		// Build notification
@@ -60,7 +60,7 @@ public class MyService extends Service {
     		
     	}else{
 
-    		Intent intentNotif = new Intent(this, EventsActivity.class);
+    		Intent intentNotif = new Intent(this, EventListActivity.class);
     		PendingIntent pIntent = PendingIntent.getActivity(this, 0, intentNotif, 0);
 
     		// Build notification
@@ -116,7 +116,7 @@ public class MyService extends Service {
         alarm.set(
             alarm.RTC_WAKEUP,
             System.currentTimeMillis() + (1000 * 60 * 30),
-            PendingIntent.getService(this, 0, new Intent(this, MyService.class), 0)
+            PendingIntent.getService(this, 0, new Intent(this, EventPoolingService.class), 0)
         );
     }
     
@@ -130,7 +130,7 @@ public class MyService extends Service {
 		
 		try {
 			
-			String sURL = pa.getConfig().getProperty(Constants.CP_WS_GET_EVENTS_PATH);
+			String sURL = pa.getConfig().getProperty(PregonacidConstants.CP_WS_GET_EVENTS_PATH);
 			sURL+=sCoursId;
 
 			Log.i(CLASSNAME, "About to make request ["+sURL+"]");

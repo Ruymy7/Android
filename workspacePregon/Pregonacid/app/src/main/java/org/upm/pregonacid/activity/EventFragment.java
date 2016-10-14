@@ -1,4 +1,4 @@
-package org.upm.pregonacid.swipe;
+package org.upm.pregonacid.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -33,7 +33,7 @@ public class EventFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		
-		rootView = inflater.inflate(R.layout.fragment_collection_object, container, false);
+		rootView = inflater.inflate(R.layout.fragment_timeline, container, false);
 		
 		Bundle args = getArguments();
 		mPosition = args.getInt(ARG_POSITION);
