@@ -18,163 +18,181 @@
  ******************************************************************************/
 package org.upm.pregonacid.db.ws.dataobjects;
 
-import org.upm.pregonacid.db.tables.EventDb;
-
 import android.util.Log;
 
 import com.google.gson.annotations.SerializedName;
+
+import org.upm.pregonacid.db.tables.EventDb;
 
 public class EventDO {
 	
 	private String CLASSNAME = this.getClass().getName();
 
-	
 	@SerializedName("id")
-	private String id;
-	// tolong
+	private Long id;
 
-	@SerializedName("subject_desc")
-	private String subject_desc;
+	@SerializedName("timestamp")
+	private Long timestamp;
 
-	@SerializedName("subject_task_desc")
-	private String subject_task_desc;
+	@SerializedName("title")
+	private String title;
 
-	@SerializedName("subject_task_alternative_desc")
-	private String subject_task_alternative_desc;	
+	@SerializedName("subtitle")
+	private String subtitle;
 
-	@SerializedName("subject_task_date_start")
-	private String subject_task_date_start;
-	// tolong
+	@SerializedName("subsubtitle")
+	private String subsubtitle;
 
-	@SerializedName("subject_task_time_duration")
-	private String subject_task_time_duration;
-	// tolong
+	@SerializedName("author")
+	private String author;
 
-	@SerializedName("subject_task_level")
-	private String subject_task_level;
-	// toint
-
-	@SerializedName("subject_task_order")
-	private String subject_task_order;
-
-	// toint
-
-	public String getId() {
-		return id;
-	}
-
-	public String getSubject_desc() {
-		return subject_desc;
-	}
-
-	public String getSubject_task_desc() {
-		return subject_task_desc;
-	}
-
-	public String getSubject_task_date_start() {
-		return subject_task_date_start;
-	}
-
-	public String getSubject_task_time_duration() {
-		return subject_task_time_duration;
-	}
-
-	public String getSubject_task_level() {
-		return subject_task_level;
-	}
-
-	public String getSubject_task_order() {
-		return subject_task_order;
-	}
+	@SerializedName("state")
+	private int state;
 
 	public String toString() {
 
 		String sAux = "";
-
 		sAux += "| id: " + id;
-		sAux += "| subject_desc: " + subject_desc;
-		sAux += "| subject_task_desc: " + subject_task_desc;
-		sAux += "| subject_task_alternative_desc: " + subject_task_alternative_desc;
-		sAux += "| subject_task_date_start: " + subject_task_date_start;		
-		sAux += "| subject_task_time_duration: " + subject_task_time_duration;
-		sAux += "| subject_task_level: " + subject_task_level;
-		sAux += "| subject_task_order: " + subject_task_order;
+		sAux += "| timestamp: " + timestamp;
+		sAux += "| title: " + title;
+		sAux += "| subtitle: " + subtitle;
+		sAux += "| subsubtitle: " + subsubtitle;
+		sAux += "| author: " + author;
+		sAux += "| state: " + state;
 
 		return sAux;
 	}
 	
 	public EventDb toSqliteObject(){
-				
-		String sSubjectId, sSubjectDesc, sSubjectTaskDesc, sSubjectTaskAlternDesc;
-		long lSubjectTaskDateStart, lSubjectTaskTimeDuration;
-		int iSubjectTaskLevel, iSubjectTaskOrder;
-				
-		
+
+		long lId;
+		String sTitle, sSubTitle, sSubSubTitle, sAuthor;
+		long lTimeStamp;
+		int iState;
+
 		try{
-			if (id == null) id = "-";
-			sSubjectId = id;
+			Long oL = new Long(id);
+			lId = oL.longValue();
 		}catch(Exception e){
-			Log.e(CLASSNAME, "Error parsing backend to SQLite object. sSubjectId. "+e.getMessage());
-			sSubjectId = "0";
+			Log.e(CLASSNAME, "Error parsing backend to SQLite object. Id. "+e.getMessage());
+			lId = 0l;
 		}
+
 		try{
-			if (subject_desc == null) subject_desc = "-";
-			sSubjectDesc = subject_desc;
+			Long oL = new Long(timestamp);
+			lTimeStamp = oL.longValue();
 		}catch(Exception e){
-			Log.e(CLASSNAME, "Error parsing backend to SQLite object. sSubjectDesc. "+e.getMessage());
-			sSubjectDesc = "0";
+			Log.e(CLASSNAME, "Error parsing backend to SQLite object. Timestamp. "+e.getMessage());
+			lTimeStamp = 0l;
 		}
+
+
 		try{
-			if (subject_task_desc == null) subject_task_desc = "-";
-			sSubjectTaskDesc = subject_task_desc;
+			if (title == null) title = "-";
+			sTitle = title;
 		}catch(Exception e){
-			Log.e(CLASSNAME, "Error parsing backend to SQLite object. sSubjectTaskDesc. "+e.getMessage());
-			sSubjectTaskDesc = "-";
+			Log.e(CLASSNAME, "Error parsing backend to SQLite object. sTitle. "+e.getMessage());
+			sTitle = "-";
 		}
-		
+
+
 		try{
-			if (subject_task_alternative_desc == null) subject_task_alternative_desc = "-";
-			sSubjectTaskAlternDesc = subject_task_alternative_desc;
+			if (subtitle == null) subtitle = "-";
+			sSubTitle = subtitle;
 		}catch(Exception e){
-			Log.e(CLASSNAME, "Error parsing backend to SQLite object. sSubjectTaskAlternDesc. "+e.getMessage());
-			sSubjectTaskAlternDesc = "-";
-		}		
-		
-		try{
-			Long oL = new Long(subject_task_date_start);
-			lSubjectTaskDateStart = oL.longValue();
-		}catch(Exception e){
-			Log.e(CLASSNAME, "Error parsing backend to SQLite object. lSubjectTaskDateStart. "+e.getMessage());
-			lSubjectTaskDateStart = 0;
+			Log.e(CLASSNAME, "Error parsing backend to SQLite object. sSubTitle. "+e.getMessage());
+			sSubTitle = "-";
 		}
+
 		try{
-			Long oL = new Long(subject_task_time_duration);
-			lSubjectTaskTimeDuration = oL.longValue();
+			if (subsubtitle == null) subsubtitle = "-";
+			sSubSubTitle = subsubtitle;
 		}catch(Exception e){
-			Log.e(CLASSNAME, "Error parsing backend to SQLite object. lSubjectTaskTimeDuration. "+e.getMessage());
-			lSubjectTaskTimeDuration = 0;
-		}		
+			Log.e(CLASSNAME, "Error parsing backend to SQLite object. sSubSubTitle. "+e.getMessage());
+			sSubSubTitle = "-";
+		}
+
 		try{
-			Integer oI = new Integer(subject_task_level);
-			iSubjectTaskLevel= oI.intValue();
+			if (author == null) author = "-";
+			sAuthor = author;
 		}catch(Exception e){
-			Log.e(CLASSNAME, "Error parsing backend to SQLite object. iSubjectTaskLevel. "+e.getMessage());
-			iSubjectTaskLevel= 0;
-		}		
+			Log.e(CLASSNAME, "Error parsing backend to SQLite object. sAuthor. "+e.getMessage());
+			sAuthor = "-";
+		}
+
 		try{
-			Integer oI = new Integer(subject_task_order);
-			iSubjectTaskOrder= oI.intValue();
+			Integer oI = new Integer(state);
+			iState= oI.intValue();
 		}catch(Exception e){
-			Log.e(CLASSNAME, "Error parsing backend to SQLite object. iSubjectTaskOrder. "+e.getMessage());
-			iSubjectTaskOrder= 0;
-		}		
-		
-		
-		EventDb s =  new EventDb(sSubjectId,sSubjectDesc,sSubjectTaskDesc,sSubjectTaskAlternDesc,lSubjectTaskDateStart,lSubjectTaskTimeDuration,iSubjectTaskLevel,iSubjectTaskOrder);
+			Log.e(CLASSNAME, "Error parsing backend to SQLite object. iState. "+e.getMessage());
+			iState= 0;
+		}
+
+
+
+		EventDb s =  new EventDb(lId, lTimeStamp, sTitle, sSubTitle, sSubSubTitle, sAuthor, iState);
 		
 		
 		
 		return s;
 	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Long timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getSubtitle() {
+		return subtitle;
+	}
+
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
+	}
+
+	public String getSubsubtitle() {
+		return subsubtitle;
+	}
+
+	public void setSubsubtitle(String subsubtitle) {
+		this.subsubtitle = subsubtitle;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
 
 }

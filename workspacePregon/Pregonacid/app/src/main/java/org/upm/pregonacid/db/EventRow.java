@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 
 public  class EventRow {
-	String sIdSubject;
+	long sIdEvent;
 	ImageView iv;
 	TextView tvField1;
 	TextView tvField2;

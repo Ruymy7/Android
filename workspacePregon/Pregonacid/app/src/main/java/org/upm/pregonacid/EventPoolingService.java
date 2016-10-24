@@ -109,9 +109,9 @@ public class EventPoolingService extends Service {
     @Override
     public void onDestroy() {
         // I want to restart this service again in...
-    	// one hour System.currentTimeMillis() + (1000 * 60 * 60)
-    	// 30 minute System.currentTimeMillis() + (1000 * 60 * 30)
-    	// one minute System.currentTimeMillis() + (1000 * 60 )
+    	//  1 hour System.currentTimeMillis() + (1000 * 60 * 60)
+    	//  30 minutes System.currentTimeMillis() + (1000 * 60 * 30)
+    	//  one minute System.currentTimeMillis() + (1000 * 60 )
         AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
         alarm.set(
             alarm.RTC_WAKEUP,

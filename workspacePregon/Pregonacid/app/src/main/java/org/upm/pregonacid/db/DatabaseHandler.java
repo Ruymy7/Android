@@ -1,17 +1,17 @@
 package org.upm.pregonacid.db;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.upm.pregonacid.db.tables.EventDb;
-import org.upm.pregonacid.db.ws.dataobjects.EventDO;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import org.upm.pregonacid.db.tables.EventDb;
+import org.upm.pregonacid.db.ws.dataobjects.EventDO;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -36,7 +36,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		
 		Log.d(CLASSNAME, "Creating table subjects...");
 		db.execSQL(EventDb.getCreateTable());
-		
 		Log.d(CLASSNAME, "Tables created!!");
 		
 
@@ -65,8 +64,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		try {
 			sqliteDB.insert(EventDb.TABLE_NAME, null, values);
 		} catch (Exception e) {
-			Log.e("DatabaseHandler", "Error inserting subject " + e.toString()
-					+ "");
+			Log.e("DatabaseHandler", "Error inserting subject " + e.toString() + "");
 			e.printStackTrace();
 		}
 		sqliteDB.close();
@@ -75,12 +73,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	/**
 	 * Insert list of subjects into db
 	 * 
-	 * @param goals
+	 * @param eList
 	 */
-	public void addSubject(List<EventDb> subjects) {
+	public void addEvents(List<EventDb> eList) {
 
-		for (int i = 0; i < subjects.size(); i++) {
-			addEvent(subjects.get(i));
+		for (int i = 0; i < eList.size(); i++) {
+			addEvent(eList.get(i));
 		}
 
 	}
@@ -89,7 +87,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	/**
 	 * Insert list of subject data objects into local db
 	 * 
-	 * @param goals
+	 * @param events
 	 */
 	public void addListEventsDO(List<EventDO> events) {
 
@@ -108,7 +106,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	 */
 	public List<EventDb> getEvents() {
 		List<EventDb> list = new ArrayList<EventDb>();
-		String selectQuery = "SELECT  * FROM " + EventDb.TABLE_NAME + " ORDER BY "+EventDb.KEY_TASK_ORDER;
+		String selectQuery = "SELECT  * FROM " + EventDb.TABLE_NAME + " ORDER BY "+EventDb.KEY_TIMESTAMP+ " desc";
 		sqliteDB = this.getWritableDatabase();
 		Cursor cursor = sqliteDB.rawQuery(selectQuery, null);
 		if (cursor.moveToFirst()) {
@@ -120,59 +118,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		cursor.close();
 		sqliteDB.close();
 		return list;
-	}
-
-	
-	
-	/**
-	 * Loads default course into local database whenever there is no connection to backend
-	 * 
-	 */
-	public List<EventDb> addDefaultSubjects(){
-		
-		List<EventDb> lSDb = new ArrayList<EventDb>();
-		
-		
-		EventDb sdb0 = new EventDb("1000", "Default Spanish Course","Gramatica", "Self study", 1479945600000L, 18000000L, 1, 0);
-		EventDb sdb1 = new EventDb("1001", "Default Spanish Course","Escuchar", "Self study", 1480118400000L, 10800000L, 1, 1);
-		EventDb sdb2 = new EventDb("1002", "Default Spanish Course","Hablar", "Self study", 1480291200000L, 7200000L, 1, 2);
-		EventDb sdb3 = new EventDb("1003", "Default Spanish Course","Escribir", "Self study", 1480377600000L, 14400000L, 1, 3);
-		EventDb sdb4 = new EventDb("1004", "Default Spanish Course","Leccion 1", "Lecture", 1480550400000L, 18000000L, 1, 4);
-		EventDb sdb5 = new EventDb("1005", "Default Spanish Course","Leccion 2", "Lecture", 1480809600000L, 7200000L, 1, 5);
-		EventDb sdb6 = new EventDb("1006", "Default Spanish Course","Leccion 3", "Lecture", 1481068800000L, 7200000L, 1, 6);
-		EventDb sdb7 = new EventDb("1007", "Default Spanish Course","Leccion 4", "Lecture", 1481155200000L, 7200000L, 1, 7);
-		EventDb sdb8 = new EventDb("1008", "Default Spanish Course","Leccion 5", "Lecture", 1481241600000L, 7200000L, 1, 8);
-		EventDb sdb9 = new EventDb("1009", "Default Spanish Course","Examen final", "Evaluation", 1481328000000L, 7200000L, 1, 9);
-
-		
-//		EventDb sdb0 = new EventDb("DSC", "Default Spanish Course","Gramatica", "Self study", 1479945600000L, 18000000L, 1, 0);
-//		EventDb sdb1 = new EventDb("DSC", "Default Spanish Course","Escuchar", "Self study", 1480118400000L, 10800000L, 1, 1);
-//		EventDb sdb2 = new EventDb("DSC", "Default Spanish Course","Hablar", "Self study", 1480291200000L, 7200000L, 1, 2);
-//		EventDb sdb3 = new EventDb("DSC", "Default Spanish Course","Escribir", "Self study", 1480377600000L, 14400000L, 1, 3);
-//		EventDb sdb4 = new EventDb("DSC", "Default Spanish Course","Leccion 1", "Lecture", 1480550400000L, 18000000L, 1, 4);
-//		EventDb sdb5 = new EventDb("DSC", "Default Spanish Course","Leccion 2", "Lecture", 1480809600000L, 7200000L, 1, 5);
-//		EventDb sdb6 = new EventDb("DSC", "Default Spanish Course","Leccion 3", "Lecture", 1481068800000L, 7200000L, 1, 6);
-//		EventDb sdb7 = new EventDb("DSC", "Default Spanish Course","Leccion 4", "Lecture", 1481155200000L, 7200000L, 1, 7);
-//		EventDb sdb8 = new EventDb("DSC", "Default Spanish Course","Leccion 5", "Lecture", 1481241600000L, 7200000L, 1, 8);
-//		EventDb sdb9 = new EventDb("DSC", "Default Spanish Course","Examen final", "Evaluation", 1481328000000L, 7200000L, 1, 9);		
-		
-		lSDb.add(sdb0);
-		lSDb.add(sdb1);
-		lSDb.add(sdb2);
-		lSDb.add(sdb3);
-		lSDb.add(sdb4);
-		lSDb.add(sdb5);
-		lSDb.add(sdb6);
-		lSDb.add(sdb7);
-		lSDb.add(sdb8);
-		lSDb.add(sdb9);
-		
-		addSubject(lSDb);
-		
-		return lSDb;
-		
-		
-		
 	}
 
 

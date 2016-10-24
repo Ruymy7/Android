@@ -90,13 +90,15 @@ public class EventListActivity extends AppCompatActivity {
 
 			// Records for data
 			HashMap temp = new HashMap<String, String>();
-			temp.put(EventDb.KEY_ID, t.getsId());
-			temp.put(EventDb.KEY_TASK_DESC, t.getsTaskDesc());
-			temp.put(EventDb.KEY_TASK_ALTERNATIVE_DESC, t.getsTaskAltDesc());
-			temp.put(EventDb.KEY_DESC, t.getsDesc());
-			temp.put(EventDb.KEY_TASK_TIME_DURATION, t.getlTaskTimeDuration());
-			temp.put(EventDb.KEY_TASK_DATE_START, t.getlTaskDateStart());
-			temp.put(EventDb.KEY_TASK_ORDER, t.getiTaskOrder());
+			temp.put(EventDb.KEY_ID, t.getlId());
+			temp.put(EventDb.KEY_TIMESTAMP, t.getlTimeStamp());
+			temp.put(EventDb.KEY_TITLE, t.getsTitle());
+			temp.put(EventDb.KEY_SUBTITLE, t.getsSubTitle());
+			temp.put(EventDb.KEY_SUBSUBTITLE, t.getsSubSubTitle());
+			temp.put(EventDb.KEY_AUTHOR, t.getsAuthor());
+			temp.put(EventDb.KEY_STATE, t.getiState());
+
+
 		
 			list.add(temp);
 		}

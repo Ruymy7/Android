@@ -79,7 +79,6 @@ public class SplashActivity extends AppCompatActivity {
 	protected void onResume() {
 		super.onResume();
 
-
 		listEventsDb = pa.getDb().getEvents();
 		if (listEventsDb.size() == 0) {
 			// Load data from backend into local db and session
@@ -112,14 +111,13 @@ public class SplashActivity extends AppCompatActivity {
 		EventWSGetAsyncTask wsat = new EventWSGetAsyncTask();
 		
 		try {
-			
+
 			String sURL = pa.getConfig().getProperty(PregonacidConstants.CP_WS_GET_EVENTS_PATH);
-			sURL+=sCoursId;			
-			
+			//String sURL = pa.getConfig().getProperty(PregonacidConstants.CP_WS_GET_EVENTS_PATH)+sCoursId;
 			lista = wsat.execute(sURL).get();
 			
 			if (lista != null){
-				Log.d(CLASSNAME, "Backend returned list with "+lista.size()+" events.");
+				Log.e(CLASSNAME, "Backend returned list with "+lista.size()+" events.");
 				
 				// Save events into local database
 				pa.getDb().addListEventsDO(lista);
@@ -128,7 +126,7 @@ public class SplashActivity extends AppCompatActivity {
 				pa.setEventsDO(lista);				
 				
 				if(lista.size() < 1){
-					Log.e(CLASSNAME, "Event list is empty");
+					Log.e(CLASSNAME, "Backend returned empty list of events.");
 					Toast.makeText(getApplicationContext(),
 							"Backend returned empty list of events.", Toast.LENGTH_LONG)
 							.show();
@@ -144,8 +142,12 @@ public class SplashActivity extends AppCompatActivity {
 			}else{
 				Log.e(CLASSNAME, "Backend returned empty list of subjects.");
 			}
-			
-			
+
+			Intent intent = new Intent(this, EventListActivity.class);
+			startActivity(intent);
+			this.finish();
+
+
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

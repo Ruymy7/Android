@@ -53,8 +53,7 @@ public class ListViewEventsAdapter extends BaseAdapter {
 		HashMap map = list.get(position);
 		
 		// Assign itemId as subject id
-		String sSubject = (String)map.get(EventDb.KEY_ID);
-		Long oLong = new Long(sSubject);
+		Long oLong = (Long)map.get(EventDb.KEY_ID);
 		
 		Log.e(CLASSNAME, "Item id: "+oLong.longValue());
 
@@ -84,16 +83,16 @@ public class ListViewEventsAdapter extends BaseAdapter {
 
 		HashMap map = list.get(position);
 		
-		sr.sIdSubject = (String)map.get(EventDb.KEY_ID);
+		sr.sIdEvent = (Long)map.get(EventDb.KEY_ID);
 		
 		// Level 1
-		sr.tvField1.setText((String)map.get(EventDb.KEY_TASK_DESC));
+		sr.tvField1.setText((String)map.get(EventDb.KEY_SUBTITLE));
 		
 		// Level 2
-		sr.tvField2.setText((String)map.get(EventDb.KEY_TASK_ALTERNATIVE_DESC));
+		sr.tvField2.setText((String)map.get(EventDb.KEY_SUBSUBTITLE));
 		
 		// Level 3		
-		long lDateStart = (Long)map.get(EventDb.KEY_TASK_DATE_START);
+		long lDateStart = (Long)map.get(EventDb.KEY_TIMESTAMP);
 		Date dDateStart = new Date();
 		dDateStart.setTime(lDateStart);
 		// DateFormat df = SimpleDateFormat.getDateTimeInstance();

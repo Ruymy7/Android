@@ -18,16 +18,16 @@
  ******************************************************************************/
 package org.upm.pregonacid.db.ws.dataobjects;
 
-import java.util.List;
-
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class EventDOList {
 
 	private String CLASSNAME = this.getClass().getName();
 
 	@SerializedName("items")
-	public List<EventDO> subjects;
+	public List<EventDO> events;
 
 	@SerializedName("kind")
 	public String kind;

@@ -10,99 +10,80 @@ import java.util.Date;
 
 public class EventDb implements ITables {
 
-	public static final String TABLE_NAME = "subject";
-
+	public static final String TABLE_NAME = "event";
 
 	public static final String KEY_ID = "id";
-	public static final String KEY_DESC = "subject_desc";
-	public static final String KEY_TASK_DESC = "subject_task_desc";
-	public static final String KEY_TASK_ALTERNATIVE_DESC = "subject_task_alternative_desc";
-	public static final String KEY_TASK_DATE_START = "subject_task_date_start";
-	public static final String KEY_TASK_TIME_DURATION = "subject_task_time_duration";
-	public static final String KEY_TASK_LEVEL = "subject_task_level";
-	public static final String KEY_TASK_ORDER = "subject_task_order";
+	public static final String KEY_TIMESTAMP = "timestamp";
+	public static final String KEY_TITLE = "title";
+	public static final String KEY_SUBTITLE = "subtitle";
+	public static final String KEY_SUBSUBTITLE = "subsubtitle";
+	public static final String KEY_AUTHOR = "author";
+	public static final String KEY_STATE = "state";
 
-	private String sId;
-	private String sDesc;
-	private String sTaskDesc;
-	private String sTaskAltDesc;
-	private long lTaskDateStart;
-	private long lTaskTimeDuration;
-	private int iTaskLevel;
-	private int iTaskOrder;
+	private long lId;
+	private long lTimeStamp;
+	private String sTitle;
+	private String sSubTitle;
+	private String sSubSubTitle;
+	private String sAuthor;
+	private int iState;
 
-	public EventDb(String sId, String sDesc, String sTaskDesc, String sTaskAltDesc,
-			long lTaskDateStart, long lTaskTimeDuration, 
-			int iTaskLevel, int iTaskOrder) {
+	public EventDb(long lId, long lTimeStamp, String sTitle, String sSubTitle, String sSubSubTitle,
+				   String sAuthor,
+				   int iState) {
 		super();
-		this.sId = sId;
-		this.sDesc = sDesc;
-		this.sTaskDesc = sTaskDesc;
-		this.sTaskAltDesc = sTaskAltDesc;
-		this.lTaskDateStart = lTaskDateStart;
-		this.lTaskTimeDuration = lTaskTimeDuration;
-		this.iTaskLevel = iTaskLevel;
-		this.iTaskOrder = iTaskOrder;
+		this.lId = lId;
+		this.lTimeStamp = lTimeStamp;
+		this.sTitle = sTitle;
+		this.sSubTitle = sSubTitle;
+		this.sSubSubTitle = sSubSubTitle;
+		this.sAuthor = sAuthor;
+		this.iState = iState;
 	}
 
 	public EventDb(Cursor c) {
 
-		this.sId = c.getString(0);
-		this.sDesc = c.getString(1);
-		this.sTaskDesc = c.getString(2);
-		this.sTaskAltDesc = c.getString(3);
-		this.lTaskDateStart = Long.parseLong(c.getString(4));
-		this.lTaskTimeDuration = Long.parseLong(c.getString(5));
-		this.iTaskLevel = Integer.parseInt(c.getString(6));
-		this.iTaskOrder = Integer.parseInt(c.getString(7));
-
+		this.lId = Long.parseLong(c.getString(0));
+		this.lTimeStamp = Long.parseLong(c.getString(1));
+		this.sTitle = c.getString(2);
+		this.sSubTitle = c.getString(3);
+		this.sSubSubTitle = c.getString(4);
+		this.sAuthor = c.getString(5);
+		this.iState = Integer.parseInt(c.getString(6));
 	}
 	
 	public EventDb(EventDO edo) {
 
-		this.sId = edo.getId();
-		this.sDesc = edo.getSubject_desc();
-		this.sTaskDesc = edo.getSubject_task_desc();
-		this.sTaskAltDesc = "pepito juano";
-		
 		try{
-			this.lTaskDateStart = Long.valueOf(edo.getSubject_task_level());
+			this.lId = Long.valueOf(edo.getId());
 		}catch(Exception e){
-			this.lTaskDateStart = new Date().getTime();
-		}		
-
-
-		try{
-			this.lTaskTimeDuration = Long.valueOf(edo.getSubject_task_time_duration());
-		}catch(Exception e){
-			this.lTaskTimeDuration = 44l;
+			this.lId = 0l;
 		}
 
-		
 		try{
-			Integer oI = Integer.valueOf(edo.getSubject_task_level());
-			this.iTaskLevel = oI.intValue();
+			this.lTimeStamp = Long.valueOf(edo.getTimestamp());
 		}catch(Exception e){
-			this.iTaskLevel = 0;
+			this.lTimeStamp = 0l;
 		}
 
-		
+		this.sTitle = edo.getTitle();
+		this.sSubTitle = edo.getSubtitle();
+		this.sSubSubTitle = edo.getSubsubtitle();
+		this.sAuthor = edo.getAuthor();
+
 		try{
-			Integer oI = Integer.valueOf(edo.getSubject_task_order());
-			this.iTaskOrder = oI.intValue();
+			Integer oI = Integer.valueOf(edo.getState());
+			this.iState = oI.intValue();
 		}catch(Exception e){
-			this.iTaskOrder = 0;
-		}		
-
-
-	}	
+			this.iState = 0;
+		}
+	}
 
 	/**
-	 * 
+	 * Receives milliseconds
 	 * @return duration in minutes
 	 */
-	public int getTaskDurationInMins() {
-		
+	public int getTaskDurationInMins(long lTaskTimeDuration) {
 
 		int minutes = (int) ((lTaskTimeDuration / 1000) / 60);
 		return minutes;
@@ -111,14 +92,13 @@ public class EventDb implements ITables {
 	public static String getCreateTable() {
 
 		String sSQL = "CREATE TABLE " + TABLE_NAME + "(" 
-				+ KEY_ID + " integer primary key autoincrement," 
-				+ KEY_DESC + " TEXT, " 
-				+ KEY_TASK_DESC + " TEXT, " 
-				+ KEY_TASK_ALTERNATIVE_DESC + " TEXT, " 
-				+ KEY_TASK_DATE_START + " INTEGER,"
-				+ KEY_TASK_TIME_DURATION + " INTEGER," 
-				+ KEY_TASK_LEVEL + " INTEGER," 
-				+ KEY_TASK_ORDER + " INTEGER" 
+				+ KEY_ID + " integer primary key autoincrement,"
+				+ KEY_TIMESTAMP + " INTEGER,"
+				+ KEY_TITLE + " TEXT, "
+				+ KEY_SUBTITLE + " TEXT, "
+				+ KEY_SUBSUBTITLE + " TEXT, "
+				+ KEY_AUTHOR + " TEXT,"
+				+ KEY_STATE + " INTEGER "
 				+ ")";
 
 		return sSQL;
@@ -127,86 +107,77 @@ public class EventDb implements ITables {
 
 	public void loadContentValues(ContentValues cv) {
 
-		cv.put(KEY_ID, sId);
-		cv.put(KEY_DESC, sDesc);
-		cv.put(KEY_TASK_DESC, sTaskDesc);
-		cv.put(KEY_TASK_ALTERNATIVE_DESC, sTaskAltDesc);
-		cv.put(KEY_TASK_DATE_START, lTaskDateStart);
-		cv.put(KEY_TASK_TIME_DURATION, lTaskTimeDuration);
-		cv.put(KEY_TASK_LEVEL, iTaskLevel);
-		cv.put(KEY_TASK_ORDER, iTaskOrder);
+		cv.put(KEY_ID, lId);
+		cv.put(KEY_TIMESTAMP, lTimeStamp);
+		cv.put(KEY_TITLE, sTitle);
+		cv.put(KEY_SUBTITLE, sSubTitle);
+		cv.put(KEY_SUBSUBTITLE, sSubSubTitle);
+		cv.put(KEY_AUTHOR, sAuthor);
+		cv.put(KEY_STATE, iState);
 
-	}
-
-	public String getsId() {
-		return sId;
-	}
-
-	public void setsId(String sId) {
-		this.sId = sId;
-	}
-
-	public String getsDesc() {
-		return sDesc;
-	}
-
-	public void setsDesc(String sDesc) {
-		this.sDesc = sDesc;
-	}
-
-	public String getsTaskDesc() {
-		return sTaskDesc;
-	}
-
-	public void setsTaskDesc(String sTaskDesc) {
-		this.sTaskDesc = sTaskDesc;
-	}
-
-	public long getlTaskDateStart() {
-		return lTaskDateStart;
 	}
 
 	public String getFormattedTaskDateStart() {
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-		Date dDateStart = new Date(lTaskDateStart);
+		Date dDateStart = new Date(lTimeStamp);
 
 		return df.format(dDateStart);
 	}
 
-	public void setlTaskDateStart(long lTaskDateStart) {
-		this.lTaskDateStart = lTaskDateStart;
+	public int getiState() {
+		return iState;
 	}
 
-	public long getlTaskTimeDuration() {
-		return lTaskTimeDuration;
+	public void setiState(int iState) {
+		this.iState = iState;
 	}
 
-	public void setlTaskTimeDuration(long lTaskTimeDuration) {
-		this.lTaskTimeDuration = lTaskTimeDuration;
+	public String getsAuthor() {
+		return sAuthor;
 	}
 
-	public int getiTaskLevel() {
-		return iTaskLevel;
+	public void setsAuthor(String sAuthor) {
+		this.sAuthor = sAuthor;
 	}
 
-	public void setiTaskLevel(int iTaskLevel) {
-		this.iTaskLevel = iTaskLevel;
+	public String getsSubSubTitle() {
+		return sSubSubTitle;
 	}
 
-	public int getiTaskOrder() {
-		return iTaskOrder;
+	public void setsSubSubTitle(String sSubSubTitle) {
+		this.sSubSubTitle = sSubSubTitle;
 	}
 
-	public void setiTaskOrder(int iTaskOrder) {
-		this.iTaskOrder = iTaskOrder;
+	public String getsSubTitle() {
+		return sSubTitle;
 	}
 
-	public String getsTaskAltDesc() {
-		return sTaskAltDesc;
+	public void setsSubTitle(String sSubTitle) {
+		this.sSubTitle = sSubTitle;
 	}
 
-	public void setsTaskAltDesc(String sTaskAltDesc) {
-		this.sTaskAltDesc = sTaskAltDesc;
+	public String getsTitle() {
+		return sTitle;
+	}
+
+	public void setsTitle(String sTitle) {
+		this.sTitle = sTitle;
+	}
+
+	public long getlTimeStamp() {
+		return lTimeStamp;
+	}
+
+	public void setlTimeStamp(long lTimeStamp) {
+		this.lTimeStamp = lTimeStamp;
+	}
+
+	public long getlId() {
+		return lId;
+	}
+
+	public void setlId(long lId) {
+		this.lId = lId;
 	}
 
 }

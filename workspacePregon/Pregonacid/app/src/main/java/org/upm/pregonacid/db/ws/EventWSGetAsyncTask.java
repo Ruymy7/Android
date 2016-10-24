@@ -18,12 +18,10 @@
  ******************************************************************************/
 package org.upm.pregonacid.db.ws;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import android.os.AsyncTask;
+import android.util.Log;
+
+import com.google.gson.Gson;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -31,20 +29,70 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 import org.upm.pregonacid.db.ws.dataobjects.EventDO;
 import org.upm.pregonacid.db.ws.dataobjects.EventDOList;
 
-import android.os.AsyncTask;
-import android.util.Log;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.google.gson.Gson;
-
-public class EventWSGetAsyncTask extends
-		AsyncTask<String, Integer, List<EventDO>> {
+public class EventWSGetAsyncTask extends AsyncTask<String, Integer, List<EventDO>> {
 	
 	private String CLASSNAME = this.getClass().getName();
 
-	public List<EventDO> listSubjects(String url) {
+
+	public List<EventDO> listEventszzz(String urlString) {
+
+		InputStream inputStream = null;
+		URL url = null;
+		HttpURLConnection connection = null;
+
+
+		try{
+			url = new URL(urlString);
+
+			HttpParams httpParameters = new BasicHttpParams();
+			// Set the timeout in milliseconds until a connection is established.
+			int timeoutConnection = 3000;
+			HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
+
+
+
+			connection = (HttpURLConnection)url.openConnection();
+			//connection.setRequestProperty("User-Agent", "");
+			//connection.setRequestMethod("GET");
+			//connection.setDoInput(true);
+			//connection.connect();
+			inputStream = new BufferedInputStream(connection.getInputStream());
+
+
+		}
+		catch (IOException e) {
+			// Writing exception to log
+			e.printStackTrace();
+		}finally {
+			connection.disconnect();
+		}
+
+		Reader reader = new InputStreamReader(inputStream);
+		Gson gson = new Gson();
+		EventDOList r = gson.fromJson(reader, EventDOList.class);
+		List<EventDO> events = r.events;
+
+		return events;
+
+	}
+
+	public List<EventDO> listEvents(String url) {
 
 		InputStream is = null;
 
@@ -72,10 +120,10 @@ public class EventWSGetAsyncTask extends
 		Reader reader = new InputStreamReader(is);
 		Gson gson = new Gson();
 		EventDOList r = gson.fromJson(reader, EventDOList.class);
-		List<EventDO> subjects = r.subjects;
+		List<EventDO> events = r.events;
 
 
-		return subjects;
+		return events;
 	}
 
 	@Override
@@ -93,7 +141,7 @@ public class EventWSGetAsyncTask extends
 		try {
 
 			Log.e(CLASSNAME, "WS GET EVENT PATH [" + sParam[0].toString() + "]");
-			sOutList = listSubjects(sParam[0].toString());
+			sOutList = listEvents(sParam[0].toString());
 			Log.e(CLASSNAME, toString(sOutList));
 
 		} catch (Exception e) {
@@ -111,22 +159,7 @@ public class EventWSGetAsyncTask extends
 
 
 	
-    /**
-     * Returns list of subjects ordered by task_order
-     * @return
-     */
-    public List<EventDO> orderedSubjects(List<EventDO> subjects){
-    	
-    	EventDO[] ordered = new EventDO[subjects.size()];
 
-    	for (EventDO subjectDO : subjects) {
-    		Integer oI = new Integer(subjectDO.getSubject_task_order());
-			ordered[oI.intValue()] = subjectDO;					
-		}    	
-    	
-    	return Arrays.asList(ordered);
-    }
-    
     /**
      * Print items in debug mode
      * @param list
@@ -134,13 +167,12 @@ public class EventWSGetAsyncTask extends
     public String toString(List<EventDO> list){
     	
     	String sResult = "";
-    	for (EventDO subjectDO : list) {
-    		sResult+=subjectDO.toString();
+    	for (EventDO eventDO : list) {
+    		sResult+=eventDO.toString();
 		}
     	
     	return sResult;
     	
     }		
-	
 
 }

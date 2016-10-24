@@ -22,17 +22,14 @@ public class PregonacidApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		
-	}	
-
-	public List<EventDb> getEvents() {
-		return events;
 	}
-
-	public void setEvents(List<EventDb> p) {
-		events = p;
+/*
+	@Override
+	protected void attachBaseContext(Context base) {
+		super.attachBaseContext(base);
+		MultiDex.install(this);
 	}
-	
+*/
 	public void setEventsDO(List<EventDO> eDO) {
 		
 		List<EventDb> eventsDb = new ArrayList<EventDb>();		
@@ -46,20 +43,22 @@ public class PregonacidApplication extends Application {
 	public DatabaseHandler getDb() {
 		return db;
 	}
-
 	public void setDb(DatabaseHandler db) {
 		this.db = db;
 	}
 
-
 	public Properties getConfig() {
 		return config;
 	}
-
-
 	public void setConfig(Properties config) {
 		this.config = config;
 	}
 
+	public List<EventDb> getEvents() {
+		return events;
+	}
+	public void setEvents(List<EventDb> p) {
+		events = p;
+	}
 
 }

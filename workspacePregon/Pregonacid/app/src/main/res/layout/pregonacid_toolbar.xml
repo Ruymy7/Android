@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:id="@+id/submitEditNote"
-        android:src="@drawable/power"
+        android:src="@drawable/close_50x"
         android:layout_alignParentEnd="true"
         android:onClick="onClickSalir"
         android:layout_alignParentRight="true" />

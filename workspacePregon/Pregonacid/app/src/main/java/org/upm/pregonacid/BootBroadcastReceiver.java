@@ -11,6 +11,11 @@ import android.content.Intent;
 public class BootBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+
+        //TE VA A INTERESAR MEJOR IMPLEMENTAR ESTOS EVENTOS
+        //http://stackoverflow.com/questions/3446202/android-detect-phone-unlock-event-not-screen-on
+
+
         context.startService(new Intent(context, EventPoolingService.class));
     }
 

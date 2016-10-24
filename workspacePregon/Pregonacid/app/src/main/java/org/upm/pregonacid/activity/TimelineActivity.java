@@ -34,9 +34,9 @@ public class TimelineActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_list_container);
-        
-        pa = (PregonacidApplication)getApplication();
 
+
+        pa = (PregonacidApplication)getApplication();
         lDayFragments = new ArrayList<EventFragment>();
         
         Bundle extras = getIntent().getExtras();   
@@ -51,17 +51,17 @@ public class TimelineActivity extends FragmentActivity {
         	
             Bundle args = new Bundle();
             args.putInt(EventFragment.ARG_POSITION, i);
-            args.putString(EventFragment.ARG_SUBTITLE, pa.getEvents().get(i).getsTaskDesc());
-            args.putString(EventFragment.ARG_SUBSUBTITLE, pa.getEvents().get(i).getsTaskAltDesc());
+            args.putString(EventFragment.ARG_SUBTITLE, pa.getEvents().get(i).getsSubTitle());
+            args.putString(EventFragment.ARG_SUBSUBTITLE, pa.getEvents().get(i).getsSubSubTitle());
 
             dayF.setArguments(args);
             
             lDayFragments.add(dayF);
             
 		}
-
-        
     }
+
+
     
 	@Override	
 	protected void onResume(){
@@ -76,7 +76,7 @@ public class TimelineActivity extends FragmentActivity {
         mViewPager.setCurrentItem(iCurrentPos);
        		
 	}
-        
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -112,7 +112,7 @@ public class TimelineActivity extends FragmentActivity {
         //
         // Alternatively this data could be obtained from local database
         //
-        View vRoot = (View) v.getParent();
+        View vRoot = (View) v.getParent().getParent();
         TextView tvTitle = (TextView)vRoot.findViewById(R.id.tvTitle);
         TextView tvSubTitle = (TextView)vRoot.findViewById(R.id.tvSubTitle);
         TextView tvSubSubTitle = (TextView)vRoot.findViewById(R.id.tvSubSubTitle);
