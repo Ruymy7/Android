@@ -33,7 +33,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
@@ -43,15 +42,13 @@ import com.google.sample.castcompanionlibrary.cast.callbacks.VideoCastConsumerIm
 import com.google.sample.castcompanionlibrary.widgets.MiniController;
 
 public class VideoBrowserActivity extends ActionBarActivity {
-
-	private String CLASSNAME = this.getClass().getName();
+	
 
 	private static final String TAG = "VideoBrowserActivity";
 	private VideoCastManager mCastManager;
 	private IVideoCastConsumer mCastConsumer;
 	private MiniController mMini;
 	private MenuItem mediaRouteMenuItem;
-	private ListView lvVideoBrowserList;
 	boolean mIsHoneyCombOrAbove = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
 	private Toolbar mToolbar;
 

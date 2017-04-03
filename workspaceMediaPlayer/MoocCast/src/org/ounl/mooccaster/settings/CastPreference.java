@@ -44,6 +44,11 @@ public class CastPreference extends PreferenceActivity
     public static final String URL_PLAYLIST_KEY = "url_playlist";
     public static final String STOP_ON_DISCONNECT = "1";
     public static final String CONTINUE_ON_DISCONNECT = "0";
+    
+    public static final String KEY_URLPLAYLIST = "urlplaylist";
+    public static final String EMPTY_VALUE = "vacio";
+    
+    
     private ListPreference mVolumeListPreference;
     private SharedPreferences mPrefs;
     private VideoCastManager mCastManager;
@@ -64,7 +69,7 @@ public class CastPreference extends PreferenceActivity
         mURLPlayListPreference = (EditTextPreference) getPreferenceScreen().findPreference(
                 URL_PLAYLIST_KEY);
         mURLPlayListPreference.setSummary(CastApplication.DEFAUT_CATALOG_URL);
-        POR AQUI TE HAS QUEDADO
+        // POR AQUI TE HAS QUEDADO
         
         
         

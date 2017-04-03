@@ -24,6 +24,8 @@ import com.google.sample.castcompanionlibrary.utils.Utils;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 /**
  * The {@link Application} for this demo application.
@@ -35,8 +37,14 @@ public class CastApplication extends Application {
     public static final String COLOR_ORANGE = "#FCC668";
     
     // Default playlist
-    public static final String DEFAUT_CATALOG_URL =
-            "https://dl.dropboxusercontent.com/u/49435539/cast/documentB5.json";
+    //public static final String DEFAUT_CATALOG_URL = "https://dl.dropboxusercontent.com/u/49435539/cast/documentB5.json";
+    //public static final String DEFAUT_CATALOG_URL = "https://www.dropbox.com/s/2fzq6bn61lieved/documentB5.json?dl=0";
+    //public static final String DEFAUT_CATALOG_URL = "https://drive.upm.es/index.php/s/YOli0aHydrpi47w/download";
+    //public static final String DEFAUT_CATALOG_URL = "https://github.com/btabuenca/Android/blob/master/workspaceNFCMediaPlayer/lifelong-learning-hub.mediaplayer/video_list_en.json";
+    public static final String DEFAUT_CATALOG_URL = "https://raw.githubusercontent.com/btabuenca/Android/master/workspaceNFCMediaPlayer/lifelong-learning-hub.mediaplayer/video_list_en.json";
+    
+    private String mUrlPlayList;
+    
 //    public static final String CATALOG_URL =
 //           "https://dl.dropboxusercontent.com/u/49435539/cast/document.json";    
 //    public static final String CATALOG_URL =
@@ -58,6 +66,11 @@ public class CastApplication extends Application {
         APPLICATION_ID = getString(R.string.app_id);
         Utils.saveFloatToPreference(getApplicationContext(),
                 VideoCastManager.PREFS_KEY_VOLUME_INCREMENT, (float) VOLUME_INCREMENT);
+        
+        
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);        
+        mUrlPlayList = sp.getString(CastPreference.KEY_URLPLAYLIST, DEFAUT_CATALOG_URL);
+        		
 
     }
 
@@ -79,6 +92,14 @@ public class CastApplication extends Application {
                 && CastPreference.STOP_ON_DISCONNECT.equals(destroyOnExitStr));
         return mCastMgr;
     }
+    
+	public String getUrlPlayList() {		
+		return mUrlPlayList;
+	}
+
+	public void setUrlPlayList(String mUrlPlayList) {
+		this.mUrlPlayList = mUrlPlayList;
+	}    
     
 
 }
