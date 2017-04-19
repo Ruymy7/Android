@@ -1,0 +1,449 @@
+{
+  "categories": [
+    {
+      "name": "Movies",
+      "videos": [
+        {
+          "subtitle": "This video introduces you to the world of marine litter. The magnitude and complexity of the problem is illustrated by showing the main sources, fate and impacts of marine litter. It furthermore emphasizes the need for collaborative action at different spatial scales and across different cultures to prevent and reduce marine litter. This requires motivated, knowledgeable and actionable people. The aim of the MOOC on marine litter is to provide these people with the necessary knowledge, tools and instruments to take effective action against marine litter, either as a leader or an expert.",
+          "sources": [
+            "https://player.vimeo.com/external/143114183.sd.mp4?s=59f50fbbfa4ebb2102393e44c5cca782&profile_id=112"
+          ],
+          "thumb": "images/111-480x270.jpg",
+          "image-480x270": "images_480x270/111-480x270.jpg",
+          "image-780x1200": "images_780x1200/111-780x1200.jpg",
+          "title": "1.1.1 Introduction to the course",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Achim Steiner is Executive Director of the United Nations Environment Programme, and Under-Secretary-General of the United Nations. He welcomes you to the course and stresses the urgency to act now. He explains the role of UNEP and other international organizations in tackling the complex issue of marine litter. He also introduces you to the Honolulu Strategy: a framework for a comprehensive and global effort to reduce the ecological, human health, and economic impacts of marine litter.",
+          "sources": [
+            "https://player.vimeo.com/external/143114163.sd.mp4?s=dceead42078f0afc292085618e3fa13c&profile_id=112"
+          ],
+          "thumb": "images/112-480x270.jpg",
+          "image-480x270": "images_480x270/112-480x270.jpg",
+          "image-780x1200": "images_780x1200/112-780x1200.jpg",
+          "title": "1.1.2 A message on Marine Litter",
+          "studio": "UNEP 2015"
+        },
+        {
+          "subtitle": "Prof. dr. Ad Ragas of the Open University in The Netherlands welcomes you to the MOOC on marine litter. He explains why you should do this course, what you will learn and how you will learn.",
+          "sources": [
+            "https://player.vimeo.com/external/143114206.sd.mp4?s=2fcaecc52aebbe4628d077c535929f41&profile_id=112"
+          ],
+          "thumb": "images/113-480x270.jpg",
+          "image-480x270": "images_480x270/113-480x270.jpg",
+          "image-780x1200": "images_780x1200/113-780x1200.jpg",
+          "title": "1.1.3 Why you should do this course?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "In this video lecture, the DPSIR framework is introduced based on a simple example: pollution of the marine environment by six pack rings. After this lecture you should be able to explain what the DPSIR framework is and you should be able to use it to illustrate the role of stakeholders, values & interests, interventions and scientific disciplines in marine litter issues.",
+          "sources": [
+            "https://player.vimeo.com/external/143114187.sd.mp4?s=951ab7463cf1f12007dd7bcf29e50202&profile_id=112"
+          ],
+          "thumb": "images/121-480x270.jpg",
+          "image-480x270": "images_480x270/121-480x270.jpg",
+          "image-780x1200": "images_780x1200/121-780x1200.jpg",
+          "title": "1.2.1 Understanding marine litter",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "This video introduces the problem showing how the Hawaiian islands in the Pacific  suffer from marine litter. The video is a fragment from the BBC documentary “Message in the Waves” (2008) and can be found below.",
+          "sources": [
+            "https://player.vimeo.com/external/143117110.sd.mp4?s=6b94f100d83e4aa1261ba355c67f289e&profile_id=112"
+          ],
+          "thumb": "images/123-480x270.jpg",
+          "image-480x270": "images_480x270/123-480x270.jpg",
+          "image-780x1200": "images_780x1200/123-780x1200.jpg",
+          "title": "1.2.3 Message in the waves",
+          "studio": "BBC 2008"
+        },
+        {
+          "subtitle": "Raoul Beunen about leadership in the battle against Marine litter",
+          "sources": [
+            "https://player.vimeo.com/external/143850730.sd.mp4?s=60115efd1381adb7c130b5561525ff06&amp;profile_id=112"
+          ],
+          "thumb": "images/2_1_1-480x270.jpg",
+          "image-480x270": "images_480x270/2_1_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/2_1_1-780x1200.jpg",
+          "title": "2.1.1 Leadership in the battle against Marine litter",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Nancy Wallace. Director of the National Oceanic and Atmospheric Administration's Marine Debris Program",
+          "sources": [
+            "https://player.vimeo.com/external/143850763.sd.mp4?s=b67a80a18d3814c6a1ac285c489f5837&amp;profile_id=112"
+          ],
+          "thumb": "images/2_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/2_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/2_1_2-780x1200.jpg",
+          "title": "2.1.2 The Honolulu Strategy",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Schone Maas project in Limburg",
+          "sources": [
+            "https://player.vimeo.com/external/143850772.sd.mp4?s=ef1713e340b3edc5222682df29ad3888&profile_id=112"
+          ],
+          "thumb": "images/2_1_6-480x270.jpg",
+          "image-480x270": "images_480x270/2_1_6-480x270.jpg",
+          "image-780x1200": "images_780x1200/2_1_6-780x1200.jpg",
+          "title": "2.1.6 The Clean Meuse project",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Prof.dr. Carolien Kroeze (1/8)",
+          "sources": [
+            "https://player.vimeo.com/external/143850927.sd.mp4?s=4755ec92631e07918a87ab99cc2c8e1846478e40&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2-780x1200.jpg",
+          "title": "3.1.2 Introduction to Block 3",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Prof.dr. Carolien Kroeze (2/8)",
+          "sources": [
+            "https://player.vimeo.com/external/143850928.sd.mp4?s=fd89edc8e5061c6d2cb5da6c688fd1ece2110c32&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2-780x1200.jpg",
+          "title": "3.1.2 Introduction of the video",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Prof.dr. Carolien Kroeze (3/8)",
+          "sources": [
+            "https://player.vimeo.com/external/143850929.sd.mp4?s=a63f129f915352aa94c85e51ba270dca355cdff7&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2-780x1200.jpg",
+          "title": "3.1.2 Why should we use models for marine litter pollution? ",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Prof.dr. Carolien Kroeze (4/8)",
+          "sources": [
+            "https://player.vimeo.com/external/143850932.sd.mp4?s=d8f17012a89e22cb1a9aa01c170f7f2e63868329&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2-780x1200.jpg",
+          "title": "3.1.2 What are environmental models?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Prof.dr. Carolien Kroeze (5/8)",
+          "sources": [
+            "https://player.vimeo.com/external/143850930.sd.mp4?s=746f34e4ae373ac055516f9bf214fdefdf1c88e8&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2-780x1200.jpg",
+          "title": "3.1.2 What information do we need to model marine litter problems?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Prof.dr. Carolien Kroeze (6/8)",
+          "sources": [
+            "https://player.vimeo.com/external/143850931.sd.mp4?s=6d9ee21af76b75e9f2dc4ec48618b37b9724fdf0&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2-780x1200.jpg",
+          "title": "3.1.2 Can we model the different sources of marine litter?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Prof.dr. Carolien Kroeze (7/8)",
+          "sources": [
+            "https://player.vimeo.com/external/143850934.sd.mp4?s=8ad40ef9459f12a0496cc5cae64928d6c9f0acbb&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2-780x1200.jpg",
+          "title": "3.1.2 What are point and non-point sources of water pollution from land?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Prof.dr. Carolien Kroeze (8/8)",
+          "sources": [
+            "https://player.vimeo.com/external/143850938.sd.mp4?s=7cbe27e6e3d3bb7abac4b8ea517e8dee9abca2a8&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2-780x1200.jpg",
+          "title": "3.1.2 How does marine litter travel in freshwaters?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Jenna Jambeck ",
+          "sources": [
+            "https://player.vimeo.com/external/143850959.sd.mp4?s=de2dc72b0359b0acdc22524e85c3e50adb034750&profile_id=112"
+          ],
+          "thumb": "images/3_1_2-480x270.jpg",
+          "image-480x270": "images_480x270/3_1_2j-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_1_2j-780x1200.jpg",
+          "title": "3.1.2 Plastic waste inputs from land into the ocean",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (1/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851149.sd.mp4?s=0076ef6a6e2a47d9933098b8ac7bd092e3461ced&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 Could you introduce yourself?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (2/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851150.sd.mp4?s=765a3edc5d2acbd1df9a564ff73ed12a8e165136&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 What is monitoring?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (3/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851147.sd.mp4?s=0996b4d97a54931cbd851de72dce9297334c15ac&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 What can we learn by monitoring marine litter?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (4/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851148.sd.mp4?s=775bbfd8cb088ef9aefbb8e355f8e7b98b7b95fd&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 What is the coupling between monitoring and modelling?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (5/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851152.sd.mp4?s=4bac6a3b2adb07cd62aadaf5b85e541a89a30c8b&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 Are there any monitoring guidelines or schemes?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (6/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851151.sd.mp4?s=da82e3dfe8f3e97e7ae1ccbe1edbcfc7b7494cc4&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 How to monitor microplastics",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (7/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851159.sd.mp4?s=57b3df086bcd7c02640f83db108b011ef42db6df&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 What kind of monitoring can people do themselves?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (8/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851162.sd.mp4?s=11895e5d727300391e2b53635a7fae421224399f&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 Who can play a role in addressing monitoring?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (9/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851160.sd.mp4?s=631195d1790ab27a5a703c4e22a0293d6abd5c8e&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 What are the key issues concerning monitoring?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardesty (10/10)",
+          "sources": [
+            "https://player.vimeo.com/external/143851161.sd.mp4?s=c66057d8c1a0b99e9f2b079e359054e1cfdca262&profile_id=112"
+          ],
+          "thumb": "images/3_2_1-480x270.jpg",
+          "image-480x270": "images_480x270/3_2_1-480x270.jpg",
+          "image-780x1200": "images_780x1200/3_2_1-780x1200.jpg",
+          "title": "3.2.1 What is still needed in monitoring?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Unreported world",
+          "sources": [
+            "https://player.vimeo.com/external/145506729.sd.mp4?s=b2ce87c829de0f9bb56cd3963af1eb92759576ca&profile_id=112"
+          ],
+          "thumb": "images/412-480x270.jpg",
+          "image-480x270": "images_480x270/412-480x270.jpg",
+          "image-780x1200": "images_780x1200/412-780x1200.jpg",
+          "title": "4.1.2 The World's Dirtiest River",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Denise Hardest",
+          "sources": [
+            "https://player.vimeo.com/external/145506700.sd.mp4?s=9645416260b38dbd4dc0aef85f90d86741d68c9d&profile_id=112"
+          ],
+          "thumb": "images/415a-480x270.jpg",
+          "image-480x270": "images_480x270/415a-480x270.jpg",
+          "image-780x1200": "images_780x1200/415a-780x1200.jpg",
+          "title": "4.1.5 Threats to seabirds",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Erik van Sebille (1/2)",
+          "sources": [
+            "https://player.vimeo.com/external/145506739.sd.mp4?s=1c09dba10aea9c5a16ff3a73c2f1bf84f9b3fc46&profile_id=112"
+          ],
+          "thumb": "images/415b-480x270.jpg",
+          "image-480x270": "images_480x270/415b-480x270.jpg",
+          "image-780x1200": "images_780x1200/415b-780x1200.jpg",
+          "title": "4.1.5 Impacts of plastics in a modelling study",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Erik van Sebille (2/2)",
+          "sources": [
+            "https://player.vimeo.com/external/145506740.sd.mp4?s=cb4641a309bf88036e9acffa8630c05949c57ebd&profile_id=112"
+          ],
+          "thumb": "images/415b-480x270.jpg",
+          "image-480x270": "images_480x270/415b-480x270.jpg",
+          "image-780x1200": "images_780x1200/415b-780x1200.jpg",
+          "title": "4.1.5 How can I do some research in my own research area?",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Peter John Kershaw",
+          "sources": [
+            "https://player.vimeo.com/external/146239072.sd.mp4?s=62384b1b26813eb1a6069ebb8186d28cf044f324&profile_id=112"
+          ],
+          "thumb": "images/511-480x270.jpg",
+          "image-480x270": "images_480x270/511-480x270.jpg",
+          "image-780x1200": "images_780x1200/511-780x1200.jpg",
+          "title": "5.1.1 Microplastics in the oceans - an emerging issue",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Peter John Kershaw",
+          "sources": [
+            "https://player.vimeo.com/external/146239089.sd.mp4?s=88d5a1b12a32869314d56345ab1e77a4ed048dd4&profile_id=112"
+          ],
+          "thumb": "images/511-480x270.jpg",
+          "image-480x270": "images_480x270/511-480x270.jpg",
+          "image-780x1200": "images_780x1200/511-780x1200.jpg",
+          "title": "5.1.2 Microplastics",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Francois Galgani",
+          "sources": [
+            "https://player.vimeo.com/external/146257371.sd.mp4?s=8d2e784b6e5867686c00035fe1563ca8562a9857&profile_id=112"
+          ],
+          "thumb": "images/513-480x270.jpg",
+          "image-480x270": "images_480x270/513-480x270.jpg",
+          "image-780x1200": "images_780x1200/513-780x1200.jpg",
+          "title": "5.1.3 Sampling microplastics in the marine environment",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Peter John Kershaw",
+          "sources": [
+            "https://player.vimeo.com/external/146239124.sd.mp4?s=661cd001a246b7434065f2286d67329b9edbcac2&profile_id=112"
+          ],
+          "thumb": "images/511-480x270.jpg",
+          "image-480x270": "images_480x270/511-480x270.jpg",
+          "image-780x1200": "images_780x1200/511-780x1200.jpg",
+          "title": "5.1.4 Major factors influencing micorplastics",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Chelsea Rochman",
+          "sources": [
+            "https://player.vimeo.com/external/146257342.sd.mp4?s=7e8bd8d9840bfa05e16111a02c5498841338fa3b&profile_id=112"
+          ],
+          "thumb": "images/522-480x270.jpg",
+          "image-480x270": "images_480x270/522-480x270.jpg",
+          "image-780x1200": "images_780x1200/522-780x1200.jpg",
+          "title": "5.2.2 Exposure to microplastics in the marine litter environment",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "Dr. Chelsea Rochman",
+          "sources": [
+            "https://player.vimeo.com/external/146257344.sd.mp4?s=ec15a57daf15981de199fcdd658aabd94c2ce069&profile_id=112"
+          ],
+          "thumb": "images/522-480x270.jpg",
+          "image-480x270": "images_480x270/522-480x270.jpg",
+          "image-780x1200": "images_780x1200/522-780x1200.jpg",
+          "title": "5.2.3 Microplastics as a vector of chemical transport into marine organisms",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "prof. dr. Dick Vethaak (1/3)",
+          "sources": [
+            "https://player.vimeo.com/external/146239215.sd.mp4?s=b2043851a2dc7aa31ca8817f30d415880c2f2795&profile_id=112"
+          ],
+          "thumb": "images/524-480x270.jpg",
+          "image-480x270": "images_480x270/524-480x270.jpg",
+          "image-780x1200": "images_780x1200/524-780x1200.jpg",
+          "title": "5.2.4 Introduction",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "prof. dr. Dick Vethaak (2/3)",
+          "sources": [
+            "https://player.vimeo.com/external/146239214.sd.mp4?s=02f3f0ad782791d69eb9668d09733d5e94ede227&profile_id=112"
+          ],
+          "thumb": "images/524-480x270.jpg",
+          "image-480x270": "images_480x270/524-480x270.jpg",
+          "image-780x1200": "images_780x1200/524-780x1200.jpg",
+          "title": "5.2.4 Biological impacts of microplastics",
+          "studio": "OUNL 2015"
+        },
+        {
+          "subtitle": "prof. dr. Dick Vethaak (3/3)",
+          "sources": [
+            "https://player.vimeo.com/external/146239217.sd.mp4?s=4183cfa5aa41dfddd2a3a6dc37be313908fb6f5f&profile_id=112"
+          ],
+          "thumb": "images/524-480x270.jpg",
+          "image-480x270": "images_480x270/524-480x270.jpg",
+          "image-780x1200": "images_780x1200/524-780x1200.jpg",
+          "title": "5.2.4 Important aspects for further research",
+          "studio": "OUNL 2015"
+        } 
+      ]
+    }
+  ]
+}
