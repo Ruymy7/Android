@@ -4,7 +4,7 @@
             "name": "Movies",
             "hls":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/",
             "dash":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/",
-            "mp4":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/",
+            "mp4":"https://player.vimeo.com/external/",
             "images":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/images/",
             "tracks":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/tracks/",
             "videos": [
@@ -12,19 +12,9 @@
                     "subtitle": "Fusce id nisi turpis. Praesent viverra bibendum semper. Donec tristique, orci sed semper lacinia, quam erat rhoncus massa, non congue tellus est quis tellus. Sed mollis orci venenatis quam scelerisque accumsan. Curabitur a massa sit amet mi accumsan mollis sed et magna. Vivamus sed aliquam risus. Nulla eget dolor in elit facilisis mattis. Ut aliquet luctus lacus. Phasellus nec commodo erat. Praesent tempus id lectus ac scelerisque. Maecenas pretium cursus lectus id volutpat.",
                     "sources": [
                         {
-                            "type": "hls",
-                            "mime": "application/x-mpegurl",
-                            "url": "DesigningForGoogleCast.m3u8"
-                        },
-                        {
-                            "type": "dash",
-                            "mime": "application/dash+xml",
-                            "url": "DesigningForGoogleCast.mpd"
-                        },
-                        {
                             "type": "mp4",
                             "mime": "videos/mp4",
-                            "url": "DesigningForGoogleCast.mp4"
+                            "url": "143114183.sd.mp4?s=59f50fbbfa4ebb2102393e44c5cca782&profile_id=112"
                         }
                     ],
                     "thumb": "images/DesigningForGoogleCast-480x270.jpg",
@@ -48,19 +38,9 @@
                     "subtitle": "Fusce id nisi turpis. Praesent viverra bibendum semper. Donec tristique, orci sed semper lacinia, quam erat rhoncus massa, non congue tellus est quis tellus. Sed mollis orci venenatis quam scelerisque accumsan. Curabitur a massa sit amet mi accumsan mollis sed et magna. Vivamus sed aliquam risus. Nulla eget dolor in elit facilisis mattis. Ut aliquet luctus lacus. Phasellus nec commodo erat. Praesent tempus id lectus ac scelerisque. Maecenas pretium cursus lectus id volutpat.",
                     "sources": [
                         {
-                            "type": "hls",
-                            "mime": "application/x-mpegurl",
-                            "url": "GoogleIO-2014-CastingToTheFuture.m3u8"
-                        },
-                        {
-                            "type": "dash",
-                            "mime": "application/dash+xml",
-                            "url": "GoogleIO-2014-CastingToTheFuture.mpd"
-                        },
-                        {
                             "type": "mp4",
                             "mime": "videos/mp4",
-                            "url": "GoogleIO-2014-CastingToTheFuture.mp4"
+                            "url": "143114163.sd.mp4?s=dceead42078f0afc292085618e3fa13c&profile_id=112"
                         }
                     ],
                     "thumb": "images/ToTheFuture-480x270.jpg",
