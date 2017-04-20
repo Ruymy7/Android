@@ -48,6 +48,16 @@
                     "subtitle": "aaaaaaaaaaaaaaa tristique, orci sed semper lacinia, quam erat rhoncus massa, non congue tellus est quis tellus. Sed mollis orci venenatis quam scelerisque accumsan. Curabitur a massa sit amet mi accumsan mollis sed et magna. Vivamus sed aliquam risus. Nulla eget dolor in elit facilisis mattis. Ut aliquet luctus lacus. Phasellus nec commodo erat. Praesent tempus id lectus ac scelerisque. Maecenas pretium cursus lectus id volutpat.",
                     "sources": [
                         {
+                            "type": "hls",
+                            "mime": "application/x-mpegurl",
+                            "url": "GoogleIO-2014-MakingGoogleCastReadyAppsDiscoverable.m3u8"
+                        },
+                        {
+                            "type": "dash",
+                            "mime": "application/dash+xml",
+                            "url": "GoogleIO-2014-MakingGoogleCastReadyAppsDiscoverable.mpd"
+                        },                        
+                        {                            
                             "type": "mp4",
                             "mime": "videos/mp4",
                             "url": "GoogleIO-2014-MakingGoogleCastReadyAppsDiscoverable.mp4"
