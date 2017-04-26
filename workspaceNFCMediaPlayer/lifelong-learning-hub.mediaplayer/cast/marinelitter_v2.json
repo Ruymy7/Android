@@ -2,11 +2,11 @@
     "categories": [
         {
             "name": "Movies",
-            "hls":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/",
-            "dash":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/",
-            "mp4":"https://player.vimeo.com/external/",
-            "images":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/images/",
-            "tracks":"https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/tracks/",
+            "hls":"",
+            "dash":"",
+            "mp4":"",
+            "images":"https://raw.githubusercontent.com/btabuenca/Android/master/workspaceNFCMediaPlayer/lifelong-learning-hub.mediaplayer/cast/",
+            "tracks":"",
             "videos": [                {
                     "subtitle": "This video introduces you to the world of marine litter. The magnitude and complexity of the problem is illustrated by showing the main sources, fate and impacts of marine litter. It furthermore emphasizes the need for collaborative action at different spatial scales and across different cultures to prevent and reduce marine litter. This requires motivated, knowledgeable and actionable people. The aim of the MOOC on marine litter is to provide these people with the necessary knowledge, tools and instruments to take effective action against marine litter, either as a leader or an expert.",
                     "sources": [
