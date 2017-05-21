@@ -7,7 +7,88 @@
             "mp4":"",
             "images":"https://raw.githubusercontent.com/btabuenca/Android/master/workspaceNFCMediaPlayer/lifelong-learning-hub.mediaplayer/cast/",
             "tracks":"",
-            "videos": [                {
+            "videos": [                				
+                {
+                    "subtitle": "Subtitulo1",
+                    "sources": [
+                        {
+                            "type": "hls",
+                            "mime": "application/x-mpegurl",
+                            "url": "https://player.vimeo.com/external/217991624.sd.mp4?s=83f7e3026c54d953e9667fb333378d29e4bb7fa4&profile_id=164"
+                        },
+                        {
+                            "type": "dash",
+                            "mime": "application/dash+xml",
+                            "url": "https://player.vimeo.com/external/217991624.sd.mp4?s=83f7e3026c54d953e9667fb333378d29e4bb7fa4&profile_id=164"
+                        },                        
+                        {                            
+                            "type": "mp4",
+                            "mime": "videos/mp4",
+                            "url": "https://player.vimeo.com/external/217991624.sd.mp4?s=83f7e3026c54d953e9667fb333378d29e4bb7fa4&profile_id=164"
+                        }
+                    ],
+                    "thumb": "",
+                    "image-480x270": "images_480x270/joker-480x270.jpg",
+                    "image-780x1200": "images_780x1200/joker-780x1200.jpg",
+                    "title": "Titulo1",
+                    "studio": "OUNL 2015",
+                    "duration" : 333,
+                    "tracks": []
+                },
+				{
+                    "subtitle": "Subtitulo2",
+                    "sources": [
+                        {
+                            "type": "hls",
+                            "mime": "application/x-mpegurl",
+                            "url": "https://player.vimeo.com/external/217962563.sd.mp4?s=5d83969120da1d17fbd53360b11b8faeb9d66811&profile_id=165"
+                        },
+                        {
+                            "type": "dash",
+                            "mime": "application/dash+xml",
+                            "url": "https://player.vimeo.com/external/217962563.sd.mp4?s=5d83969120da1d17fbd53360b11b8faeb9d66811&profile_id=165"
+                        },                        
+                        {                            
+                            "type": "mp4",
+                            "mime": "videos/mp4",
+                            "url": "https://player.vimeo.com/external/217962563.sd.mp4?s=5d83969120da1d17fbd53360b11b8faeb9d66811&profile_id=165"
+                        }
+                    ],
+                    "thumb": "",
+                    "image-480x270": "images_480x270/joker-480x270.jpg",
+                    "image-780x1200": "images_780x1200/joker-780x1200.jpg",
+                    "title": "Titulo2",
+                    "studio": "OUNL 2015",
+                    "duration" : 333,
+                    "tracks": []
+                },
+				{
+                    "subtitle": "Subtitulo3",
+                    "sources": [
+                        {
+                            "type": "hls",
+                            "mime": "application/x-mpegurl",
+                            "url": "https://player.vimeo.com/external/217991624.hd.mp4?s=66c9bf00a1283e84e883abdcf8b9cdf2538088e9&profile_id=174"
+                        },
+                        {
+                            "type": "dash",
+                            "mime": "application/dash+xml",
+                            "url": "https://player.vimeo.com/external/217991624.hd.mp4?s=66c9bf00a1283e84e883abdcf8b9cdf2538088e9&profile_id=174"
+                        },                        
+                        {                            
+                            "type": "mp4",
+                            "mime": "videos/mp4",
+                            "url": "https://player.vimeo.com/external/217991624.hd.mp4?s=66c9bf00a1283e84e883abdcf8b9cdf2538088e9&profile_id=174"
+                        }
+                    ],
+                    "thumb": "",
+                    "image-480x270": "images_480x270/joker-480x270.jpg",
+                    "image-780x1200": "images_780x1200/joker-780x1200.jpg",
+                    "title": "Titulo3",
+                    "studio": "OUNL 2015",
+                    "duration" : 333,
+                    "tracks": []
+                },{
                     "subtitle": "This video introduces you to the world of marine litter. The magnitude and complexity of the problem is illustrated by showing the main sources, fate and impacts of marine litter. It furthermore emphasizes the need for collaborative action at different spatial scales and across different cultures to prevent and reduce marine litter. This requires motivated, knowledgeable and actionable people. The aim of the MOOC on marine litter is to provide these people with the necessary knowledge, tools and instruments to take effective action against marine litter, either as a leader or an expert.",
                     "sources": [
                         {
