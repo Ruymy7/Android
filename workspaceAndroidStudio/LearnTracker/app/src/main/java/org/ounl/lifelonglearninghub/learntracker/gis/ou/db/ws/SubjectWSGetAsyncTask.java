@@ -18,9 +18,14 @@
  ******************************************************************************/
 package org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +38,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.SubjectDO;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.SubjectDOList;
+import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.UserDO;
+import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.UserDOList;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.session.Session;
 
 import android.os.AsyncTask;
@@ -45,6 +52,67 @@ public class SubjectWSGetAsyncTask extends
 	
 	private String CLASSNAME = this.getClass().getName();
 
+
+	public List<SubjectDO> listSubjects(String sCourseId) {
+		HttpURLConnection c = null;
+
+		String url = Session.getSingleInstance().getWSPath()+"/_ah/api/subjectendpoint/v1/subject/course/";
+		url+=sCourseId;
+
+		try {
+			URL u = new URL(url);
+			c = (HttpURLConnection) u.openConnection();
+			c.setRequestMethod("GET");
+			c.setRequestProperty("Content-length", "0");
+			c.setUseCaches(false);
+			c.setAllowUserInteraction(false);
+			c.setConnectTimeout(5000);
+			c.setReadTimeout(5000);
+			c.connect();
+			int status = c.getResponseCode();
+
+
+			switch (status) {
+				case 200:
+				case 201:
+					BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream()));
+					StringBuilder sb = new StringBuilder();
+					String line;
+					while ((line = br.readLine()) != null) {
+						sb.append(line+"\n");
+					}
+					br.close();
+
+
+					Gson gson = new Gson();
+					SubjectDOList r = gson.fromJson(sb.toString(), SubjectDOList.class);
+					List<SubjectDO> subjects = r.subjects;
+
+
+					return subjects;
+			}
+
+		} catch (MalformedURLException ex) {
+			Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+		} catch (IOException ex) {
+			Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+		} finally {
+			if (c != null) {
+				try {
+					c.disconnect();
+				} catch (Exception ex) {
+					Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+				}
+			}
+		}
+
+		return null;
+	}
+
+
+
+
+/*
 	public List<SubjectDO> listSubjects(String sCourseId) {
 
 		// e.g. query https://lifelong-learning-hub.appspot.com/_ah/api/subjectendpoint/v1/subject/course/S23222
@@ -82,6 +150,7 @@ public class SubjectWSGetAsyncTask extends
 
 		return subjects;
 	}
+*/
 
 	@Override
 	protected void onPreExecute() {

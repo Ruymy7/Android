@@ -18,9 +18,14 @@
  ******************************************************************************/
 package org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +35,8 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.ActivityDO;
+import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.ActivityDOList;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.UserDO;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws.dataobjects.UserDOList;
 import org.ounl.lifelonglearninghub.learntracker.gis.ou.session.Session;
@@ -44,6 +51,77 @@ public class UserIdWSGetAsyncTask extends
 	
 	private String CLASSNAME = this.getClass().getName();
 
+
+	public List<String> listUserIds(String sCourseId) {
+		HttpURLConnection c = null;
+
+		String url = Session.getSingleInstance().getWSPath()+"/_ah/api/userendpoint/v1/user/course/";
+		url+=sCourseId;
+
+		try {
+			URL u = new URL(url);
+			c = (HttpURLConnection) u.openConnection();
+			c.setRequestMethod("GET");
+			c.setRequestProperty("Content-length", "0");
+			c.setUseCaches(false);
+			c.setAllowUserInteraction(false);
+			c.setConnectTimeout(5000);
+			c.setReadTimeout(5000);
+			c.connect();
+			int status = c.getResponseCode();
+
+
+			switch (status) {
+				case 200:
+				case 201:
+					BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream()));
+					StringBuilder sb = new StringBuilder();
+					String line;
+					while ((line = br.readLine()) != null) {
+						sb.append(line+"\n");
+					}
+					br.close();
+
+
+					Gson gson = new Gson();
+					UserDOList r = gson.fromJson(sb.toString(), UserDOList.class);
+
+
+					List<UserDO> usersDO = r.users;
+					List<String> listUserIds = new ArrayList<String>();
+
+					//		Log.d(CLASSNAME, " Number of users retrieved from backend: " + users.size());
+					//		List<UserDO> lOrderedUsers = orderedUsers(users);
+					//		Log.d(CLASSNAME, " Number of users retrieved from ordered list: " + lOrderedUsers.size());
+					//		Log.d(CLASSNAME, toString(lOrderedUsers));
+
+					for (UserDO s : usersDO) {
+						Log.d(CLASSNAME, s.toString());
+						listUserIds.add(s.getUserName());
+					}
+
+
+					return listUserIds;
+			}
+
+		} catch (MalformedURLException ex) {
+			Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+		} catch (IOException ex) {
+			Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+		} finally {
+			if (c != null) {
+				try {
+					c.disconnect();
+				} catch (Exception ex) {
+					Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+				}
+			}
+		}
+
+		return null;
+	}
+
+/*
 	public List<String> listUserIds(String sCourseId) {
 
 
@@ -93,6 +171,7 @@ public class UserIdWSGetAsyncTask extends
 
 		return listUserIds;
 	}
+*/
 
 	@Override
 	protected void onPreExecute() {

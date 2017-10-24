@@ -18,9 +18,14 @@
  ******************************************************************************/
 package org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ws;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,6 +50,64 @@ public class ActivityWSGetAsyncTask extends
 	
 	private String CLASSNAME = this.getClass().getName();
 
+
+	public List<ActivityDO> listActivities(String sCourseId, String sUserId) {
+		HttpURLConnection c = null;
+
+		String url = Session.getSingleInstance().getWSPath()+"/_ah/api/activityendpoint/v1/activity/course/"+sCourseId+"/user/"+sUserId;
+
+		try {
+			URL u = new URL(url);
+			c = (HttpURLConnection) u.openConnection();
+			c.setRequestMethod("GET");
+			c.setRequestProperty("Content-length", "0");
+			c.setUseCaches(false);
+			c.setAllowUserInteraction(false);
+			c.setConnectTimeout(5000);
+			c.setReadTimeout(5000);
+			c.connect();
+			int status = c.getResponseCode();
+
+
+			switch (status) {
+				case 200:
+				case 201:
+					BufferedReader br = new BufferedReader(new InputStreamReader(c.getInputStream()));
+					StringBuilder sb = new StringBuilder();
+					String line;
+					while ((line = br.readLine()) != null) {
+						sb.append(line+"\n");
+					}
+					br.close();
+
+
+					Gson gson = new Gson();
+					ActivityDOList r = gson.fromJson(sb.toString(), ActivityDOList.class);
+					List<ActivityDO> activities = r.activities;
+
+
+					return activities;
+			}
+
+		} catch (MalformedURLException ex) {
+			Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+		} catch (IOException ex) {
+			Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+		} finally {
+			if (c != null) {
+				try {
+					c.disconnect();
+				} catch (Exception ex) {
+					Log.e(CLASSNAME, "Error in http connection " + ex.toString());
+				}
+			}
+		}
+
+		return null;
+	}
+
+
+	/*
 	public List<ActivityDO> listActivities(String sCourseId, String sUserId) {
 
 		// TODO THIS IS NOW RETURNING ALL THE ACTIVITIES FOR A USER
@@ -91,6 +154,7 @@ public class ActivityWSGetAsyncTask extends
 
 		return activities;
 	}
+*/
 
 	@Override
 	protected void onPreExecute() {
