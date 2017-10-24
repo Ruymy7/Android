@@ -1,0 +1,115 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:2:1-66:12
+	package
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:3:5-63
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+	android:versionCode
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:4:5-29
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:9:9-38
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:8:9-35
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:11:2-64
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:11:19-61
+application
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:19:5-64:19
+	android:screenOrientation
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:25:9-45
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:23:9-41
+	android:launchMode
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:24:9-44
+	android:allowBackup
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:20:9-35
+	android:alwaysRetainTaskState
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:21:9-45
+	android:icon
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:22:9-45
+	android:theme
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:26:9-40
+activity#org.ounl.lifelonglearninghub.learntracker.gis.ou.LoadingScreenActivity
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:27:9-42:20
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:29:13-45
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:28:13-98
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:30:13-34:29
+action#android.intent.action.MAIN
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:31:17-69
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:31:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:33:17-77
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:33:27-74
+intent-filter#android.intent.category.DEFAULT+android.nfc.action.TAG_DISCOVERED
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:37:13-41:29
+action#android.nfc.action.TAG_DISCOVERED
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:38:17-76
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:38:25-73
+category#android.intent.category.DEFAULT
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:40:17-76
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:40:27-73
+activity#org.ounl.lifelonglearninghub.learntracker.gis.ou.swipe.SubjectsActivity
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:43:9-45:48
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:45:13-45
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:44:13-99
+activity#org.ounl.lifelonglearninghub.learntracker.gis.ou.swipe.MainActivity
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:46:9-48:48
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:48:13-45
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:47:13-95
+activity#org.ounl.lifelonglearninghub.learntracker.gis.ou.swipe.TimeLineActivity
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:49:9-51:48
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:51:13-45
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:50:13-99
+activity#org.ounl.lifelonglearninghub.learntracker.gis.ou.db.charts.PieChartActivity
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:52:9-54:48
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:54:13-45
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:53:13-103
+activity#org.ounl.lifelonglearninghub.learntracker.gis.ou.db.CreateGoalActivity
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:55:9-57:48
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:57:13-45
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:56:13-98
+activity#org.ounl.lifelonglearninghub.learntracker.gis.ou.db.ViewGoalActivity
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:58:9-60:48
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:60:13-45
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:59:13-96
+activity#org.achartengine.GraphicalActivity
+ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:61:9-63:48
+	android:label
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:63:13-45
+	android:name
+		ADDED from /Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/AndroidManifest.xml:62:13-62

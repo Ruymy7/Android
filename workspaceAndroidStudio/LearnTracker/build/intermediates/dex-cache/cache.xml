@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/pre-dexed/debug/gson-2.2.4_d0ce76b63ce905fbab3c5d385c8e1b8692010f19.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/libs/achartengine-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
+        <dex dex="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/pre-dexed/debug/achartengine-1.1.0_caccb60a81fd05fd50819be5b1da8afa3a1a3d47.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/libs/guavalib.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4dad6eb644b525f4222e3c55d31c16660bacb92e">
+        <dex dex="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/pre-dexed/debug/guavalib_9d2b749007ea0632ce73af64b4ab04838e12442f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/BTB/bin/java/adt-bundle-mac/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0_9f5a8b49c530e6f5ab6368279a4ef4a03e56b99f.jar" />
+    </item>
+
+</items>
