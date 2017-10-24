@@ -39,9 +39,9 @@ public class CastApplication extends Application {
     // Default playlist
     //public static final String DEFAUT_CATALOG_URL = "https://dl.dropboxusercontent.com/u/49435539/cast/documentB5.json";
     //public static final String DEFAUT_CATALOG_URL = "https://www.dropbox.com/s/2fzq6bn61lieved/documentB5.json?dl=0";
-    //public static final String DEFAUT_CATALOG_URL = "https://drive.upm.es/index.php/s/YOli0aHydrpi47w/download";
+    public static final String DEFAUT_CATALOG_URL = "https://drive.upm.es/index.php/s/YOli0aHydrpi47w/download";
     //public static final String DEFAUT_CATALOG_URL = "https://github.com/btabuenca/Android/blob/master/workspaceNFCMediaPlayer/lifelong-learning-hub.mediaplayer/video_list_en.json";
-    public static final String DEFAUT_CATALOG_URL = "https://raw.githubusercontent.com/btabuenca/Android/master/workspaceNFCMediaPlayer/lifelong-learning-hub.mediaplayer/video_list_en.json";
+    //public static final String DEFAUT_CATALOG_URL = "https://raw.githubusercontent.com/btabuenca/Android/master/workspaceNFCMediaPlayer/lifelong-learning-hub.mediaplayer/video_list_en.json";
     
     private String mUrlPlayList;
     

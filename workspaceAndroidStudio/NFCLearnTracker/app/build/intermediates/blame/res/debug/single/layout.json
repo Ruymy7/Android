@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_swipe.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_swipe.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_collection_demo.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_collection_demo.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/listview_row_goal.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/listview_row_goal.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_goal_cube.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_goal_cube.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/fragment_section_goals.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/fragment_section_goals.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/fragment_collection_object.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/fragment_collection_object.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/prompts.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/prompts.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_display_notifications.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_display_notifications.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/listview_row_activity.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/listview_row_activity.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/tag_text.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/tag_text.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/check_item.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/check_item.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_display_jukebox.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_display_jukebox.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_display_tags.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_display_tags.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_display_activities.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_display_activities.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/prompt_jukebox.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/prompt_jukebox.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_goal.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_goal.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_create_goal.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_create_goal.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/listview_row_tag.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/listview_row_tag.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_display_effects.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_display_effects.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/prompt_sampler.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/prompt_sampler.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_display_audio.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_display_audio.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/piechart.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/piechart.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/listview_row_notification.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/listview_row_notification.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/tag_divider.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/tag_divider.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_display_visual.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_display_visual.xml"
+    },
+    {
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/res/merged/debug/layout/activity_pager.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/src/main/res/layout/activity_pager.xml"
+    }
+]

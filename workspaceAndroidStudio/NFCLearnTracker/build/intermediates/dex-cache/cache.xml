@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/libs/guavalib.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4dad6eb644b525f4222e3c55d31c16660bacb92e">
+        <dex dex="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/pre-dexed/debug/guavalib_6371aa7a5b31107f1a449a3112a4f17a02c409f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/BTB/bin/java/adt-bundle-mac/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0_9f5a8b49c530e6f5ab6368279a4ef4a03e56b99f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/libs/achartengine-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
+        <dex dex="/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/NFCLearnTracker/app/build/intermediates/pre-dexed/debug/achartengine-1.1.0_d938d82ef3d2ef297f4c5851694b8028d24fd276.jar" />
+    </item>
+
+</items>
