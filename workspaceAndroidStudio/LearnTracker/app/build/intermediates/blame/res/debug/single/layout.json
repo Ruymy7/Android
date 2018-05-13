@@ -1,15 +1,15 @@
 [
     {
-        "merged": "/Users/BTB/Projects/GitHub/LearnTracker/app/build/intermediates/res/merged/debug/layout/listview_row_subject.xml",
-        "source": "/Users/BTB/Projects/GitHub/LearnTracker/app/src/main/res/layout/listview_row_subject.xml"
+        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/res/merged/debug/layout/prompts.xml",
+        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/layout/prompts.xml"
     },
     {
         "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/res/merged/debug/layout/fragment_collection_object.xml",
         "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/layout/fragment_collection_object.xml"
     },
     {
-        "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/res/merged/debug/layout/prompts.xml",
-        "source": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/layout/prompts.xml"
+        "merged": "/Users/BTB/Projects/GitHub/LearnTracker/app/build/intermediates/res/merged/debug/layout/listview_row_subject.xml",
+        "source": "/Users/BTB/Projects/GitHub/LearnTracker/app/src/main/res/layout/listview_row_subject.xml"
     },
     {
         "merged": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/res/merged/debug/layout/splash.xml",

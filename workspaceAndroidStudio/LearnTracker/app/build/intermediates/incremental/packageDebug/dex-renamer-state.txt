@@ -1,4 +1,4 @@
-#Wed Oct 25 01:10:56 CEST 2017
+#Sun May 13 21:06:14 CEST 2018
 base.0=/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

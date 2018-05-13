@@ -45,14 +45,16 @@ public final class R {
         public static final int rew=0x7f02001f;
         public static final int sched_50x=0x7f020020;
         public static final int splash_512x=0x7f020021;
-        public static final int start_167x154=0x7f020022;
-        public static final int start_334x308=0x7f020023;
-        public static final int start_50x=0x7f020024;
-        public static final int stop=0x7f020025;
-        public static final int stop_167x154=0x7f020026;
-        public static final int stop_334x308=0x7f020027;
-        public static final int stop_50x=0x7f020028;
-        public static final int user_50x=0x7f020029;
+        public static final int splash_mooc_512x=0x7f020022;
+        public static final int splash_mooc_72x=0x7f020023;
+        public static final int start_167x154=0x7f020024;
+        public static final int start_334x308=0x7f020025;
+        public static final int start_50x=0x7f020026;
+        public static final int stop=0x7f020027;
+        public static final int stop_167x154=0x7f020028;
+        public static final int stop_334x308=0x7f020029;
+        public static final int stop_50x=0x7f02002a;
+        public static final int user_50x=0x7f02002b;
     }
     public static final class id {
         public static final int chart=0x7f070024;
@@ -65,11 +67,11 @@ public final class R {
         public static final int ivActionActivity=0x7f07000f;
         public static final int ivRecording=0x7f070011;
         public static final int ivSubjectIcon=0x7f070020;
-        public static final int ivTapToScan=0x7f070028;
+        public static final int ivTapToScan=0x7f070029;
         public static final int layout_root=0x7f070025;
         public static final int linearLayoutRowActivity=0x7f07001b;
         public static final int linearLayoutRowSubject=0x7f07001f;
-        public static final int list=0x7f070029;
+        public static final int list=0x7f070028;
         public static final int listFragment=0x7f07000c;
         public static final int listviewActivities=0x7f070005;
         public static final int listviewSubjects=0x7f07001a;
@@ -136,15 +138,8 @@ public final class R {
     public static final class style {
         /**  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
          */
         public static final int AppBaseTheme=0x7f040000;
-        /**  All customizations that are NOT specific to a particular API-level can go here. 
-         */
         public static final int AppTheme=0x7f040001;
     }
 }

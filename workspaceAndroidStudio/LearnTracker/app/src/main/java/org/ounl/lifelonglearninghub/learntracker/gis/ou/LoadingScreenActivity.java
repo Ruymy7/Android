@@ -820,9 +820,9 @@ public class LoadingScreenActivity extends Activity {
 	
 	private void showBlockingSplash(){
 
-		ImageView ivBlock = (ImageView) findViewById(R.id.ivTapToScan);
-		ivBlock.setImageResource(R.drawable.alert_367x);
-		ivBlock.setOnClickListener(null);
+		//ImageView ivBlock = (ImageView) findViewById(R.id.ivSubjectIcon);
+		//ivBlock.setImageResource(R.drawable.alert_367x);
+		//ivBlock.setOnClickListener(null);
 
 		TextView tvCourseId = (TextView) findViewById(R.id.tvPropCourseId);
 		tvCourseId.setText("Course: "+Session.getSingleInstance().getCourse_id());

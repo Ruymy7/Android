@@ -3,7 +3,7 @@
     android:layout_height="fill_parent"
     android:layout_gravity="center_vertical"
     android:gravity="center_vertical"
-    android:background="#9CA31E"
+    android:background="#ffffff"
     android:onClick="onClickSwipeButton"
     android:orientation="vertical" >
  
@@ -21,15 +21,6 @@
             android:layout_gravity="center_horizontal"              
             android:onClick="onClickMenu"
             android:src="@drawable/menu_50x" />
-        
- 		<ImageView
- 		    android:id="@+id/ivTapToScan"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onClickSwipeButton"
-            android:src="@drawable/ltbar_trasp" />
  				
  		<ImageView
             android:layout_width="50dp"
@@ -49,6 +40,14 @@
         android:layout_gravity="bottom"
         android:gravity="bottom"
         android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/ivTapToScan"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/splash_mooc_512x" />
 
         <TextView
             android:id="@+id/tvPropUserId"

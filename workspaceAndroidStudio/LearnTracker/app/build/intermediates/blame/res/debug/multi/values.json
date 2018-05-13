@@ -11,14 +11,7 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 56,
-                        "endColumn": 48,
-                        "endOffset": 100
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -30,14 +23,7 @@
                     "endOffset": 150
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 451,
-                        "endColumn": 50,
-                        "endOffset": 497
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -45,8 +31,8 @@
                     "startLine": 4,
                     "startColumn": 4,
                     "startOffset": 155,
-                    "endColumn": 65,
-                    "endOffset": 216
+                    "endColumn": 63,
+                    "endOffset": 214
                 },
                 "from": {
                     "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
@@ -54,8 +40,8 @@
                         "startLine": 5,
                         "startColumn": 4,
                         "startOffset": 156,
-                        "endColumn": 65,
-                        "endOffset": 217
+                        "endColumn": 63,
+                        "endOffset": 215
                     }
                 }
             },
@@ -63,156 +49,98 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 221,
+                    "startOffset": 219,
                     "endColumn": 42,
-                    "endOffset": 259
+                    "endOffset": 257
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 312,
-                        "endColumn": 42,
-                        "endOffset": 350
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 264,
+                    "startOffset": 262,
                     "endColumn": 50,
-                    "endOffset": 310
+                    "endOffset": 308
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 105,
-                        "endColumn": 50,
-                        "endOffset": 151
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 315,
+                    "startOffset": 313,
                     "endColumn": 40,
-                    "endOffset": 351
+                    "endOffset": 349
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 222,
-                        "endColumn": 40,
-                        "endOffset": 258
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 356,
+                    "startOffset": 354,
                     "endColumn": 48,
-                    "endOffset": 400
+                    "endOffset": 398
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 355,
-                        "endColumn": 48,
-                        "endOffset": 399
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 405,
+                    "startOffset": 403,
                     "endColumn": 46,
-                    "endOffset": 447
+                    "endOffset": 445
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 404,
-                        "endColumn": 46,
-                        "endOffset": 446
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 452,
+                    "startOffset": 450,
                     "endColumn": 48,
-                    "endOffset": 496
+                    "endOffset": 494
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 263,
-                        "endColumn": 48,
-                        "endOffset": 307
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 501,
-                    "endLine": 17,
+                    "startOffset": 499,
+                    "endLine": 13,
                     "endColumn": 12,
-                    "endOffset": 787
+                    "endOffset": 577
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 186,
-                        "endLine": 12,
-                        "endColumn": 12,
-                        "endOffset": 472
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/styles.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 18,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 792,
-                    "endLine": 20,
+                    "startOffset": 582,
+                    "endLine": 16,
                     "endColumn": 12,
-                    "endOffset": 947
+                    "endOffset": 649
                 },
                 "from": {
-                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 510,
-                        "endLine": 17,
-                        "endColumn": 12,
-                        "endOffset": 665
-                    }
+                    "file": "/Users/BTB/Projects/GitHub/Android/workspaceAndroidStudio/LearnTracker/app/src/main/res/values/styles.xml"
                 }
             }
         ]
